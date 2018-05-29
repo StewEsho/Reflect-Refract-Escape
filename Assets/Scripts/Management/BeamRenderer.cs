@@ -18,7 +18,7 @@ public class BeamRenderer : MonoBehaviour {
     beamAEnd = BeamEmitter.beamAEnd;
     beamBStart = BeamEmitter.beamBStart;
     beamBEnd = BeamEmitter.beamBEnd;
-    GetComponent<MeshFilter>().mesh = createLightMesh(new Vector2[] {beamAStart, beamAEnd, beamBStart});
+      GetComponent<MeshFilter>().mesh = createLightMesh(new Vector2[] {beamAStart, beamAEnd, beamBEnd, beamBStart});
 	}
 
   void OnDrawGizmosSelected() {
