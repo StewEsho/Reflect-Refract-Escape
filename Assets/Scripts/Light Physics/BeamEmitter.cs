@@ -56,14 +56,14 @@ public class BeamEmitter : MonoBehaviour {
     RaycastHit2D hit = Physics2D.Raycast(origin, dir, 30);
     bool hasHit = false;
     hitpoint = hit.point;
-    Debug.DrawLine(origin, hitpoint, Color.green);
+    Debug.DrawLine(origin, hitpoint, Color.yellow);
 
     // Debug.DrawRay(origin, dir*30);
 
     if (hit.collider != null ){
       hasHit = true;
       hitpoint = hit.point;
-      // Debug.DrawRay(origin, dir * hit.distance, Color.green);
+      // Debug.DrawRay(origin, dir * hit.distance, Color.yellow);
       Mirror mirror = hit.collider.gameObject.GetComponent<Mirror>();
       if(mirror != null){
         mirror.ReflectLight(hitpoint, dir);
