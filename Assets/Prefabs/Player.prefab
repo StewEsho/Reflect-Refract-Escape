@@ -36,7 +36,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4838942775649024}
   - component: {fileID: 114531354992547004}
-  - component: {fileID: 114705019019517108}
   - component: {fileID: 50215728830080518}
   - component: {fileID: 58790395990388520}
   - component: {fileID: 114897121058750346}
@@ -67,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1867583279795192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.21, y: 0.87, z: 0}
+  m_LocalPosition: {x: -1.82, y: 2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4758189166719984}
@@ -121,17 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
---- !u!114 &114705019019517108
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1867583279795192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbdf923f75aedf147baed7c2738b0a9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114897121058750346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 1737899730787116, guid: 48b7a17aa2ce4694fbf799cd5d08a438, type: 2}
-  rotationSpeed: 5
+  rotationSpeed: 120
 --- !u!212 &212711580473979970
 SpriteRenderer:
   m_ObjectHideFlags: 1
