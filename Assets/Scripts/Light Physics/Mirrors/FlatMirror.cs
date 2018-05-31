@@ -45,7 +45,8 @@ public class FlatMirror : BeamEmitter, Mirror {
       float reflection_x = normal.x * Mathf.Cos(angle) - normal.y * Mathf.Sin(angle);
       float reflection_y = normal.x * Mathf.Sin(angle) + normal.y * Mathf.Cos(angle);
       reflectionDir = new Vector2 (reflection_x, reflection_y);
-      Debug.DrawRay(hit, reflectionDir * 20, Color.green);
+      EmitLight(hit + (0.01f * normal), reflectionDir);
+      // Debug.DrawRay(hit, reflectionDir * 20, Color.green);
     }
     if (Input.GetKeyDown(KeyCode.X))
       Debug.Log(Vector3.Cross(normal, incidenceDir));

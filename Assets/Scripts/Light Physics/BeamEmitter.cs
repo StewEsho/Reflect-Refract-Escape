@@ -39,11 +39,17 @@ public class BeamEmitter : MonoBehaviour {
     // Debug.DrawRay(beamAStart, beamDirection, Color.white);
     // Debug.DrawRay(beamBStart, beamDirection, Color.white);
     RaycastHit2D hit = Physics2D.Raycast(origin, dir, 30);
-    if (hit.collider != null) {
+    bool hasHit = false;
+    hitpoint = hit.point;
+    Debug.DrawLine(origin, hitpoint, Color.green);
+
+    // Debug.DrawRay(origin, dir*30);
+
+    if (hit.collider != null ){
+      hasHit = true;
       hitpoint = hit.point;
-      bm.RenderLight(new Vector2[] {origin, hitpoint, new Vector2(0, 0), new Vector2(0.1f, 0.1f)});
-      // Debug.Log("Noice");
-      FlatMirror mirror = hit.collider.gameObject.GetComponent<FlatMirror>();
+      // Debug.DrawRay(origin, dir * hit.distance, Color.green);
+      Mirror mirror = hit.collider.gameObject.GetComponent<Mirror>();
       if(mirror != null){
         mirror.ReflectLight(hitpoint, dir);
       }
@@ -54,11 +60,11 @@ public class BeamEmitter : MonoBehaviour {
     foreach (Vector2 origin in origins){
       RaycastHit2D hit = Physics2D.Raycast(origin, dir, 30);
       bool hasHit = false;
+      hitpoint = hit.point;
+      Debug.DrawLine(origin, hitpoint);
 
       if (hit.collider != null ){
         hasHit = true;
-        hitpoint = hit.point;
-        Debug.DrawLine(origin, hitpoint);
         Mirror mirror = hit.collider.gameObject.GetComponent<Mirror>();
         if(mirror != null){
           mirror.ReflectLight(hitpoint, dir);

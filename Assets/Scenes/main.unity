@@ -1434,7 +1434,7 @@ Tilemap:
     m_DirtyIndex: 0
   - serializedVersion: 1
     m_DirtyIndex: 0
---- !u!1001 &1550689229
+--- !u!1001 &1227900324
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1455,19 +1455,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4260793747638986, guid: 48b7a17aa2ce4694fbf799cd5d08a438, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4260793747638986, guid: 48b7a17aa2ce4694fbf799cd5d08a438, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4260793747638986, guid: 48b7a17aa2ce4694fbf799cd5d08a438, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.9661887
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4260793747638986, guid: 48b7a17aa2ce4694fbf799cd5d08a438, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.25783613
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4260793747638986, guid: 48b7a17aa2ce4694fbf799cd5d08a438, type: 2}
       propertyPath: m_RootOrder
