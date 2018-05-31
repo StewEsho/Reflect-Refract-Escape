@@ -24,7 +24,7 @@ public class BeamEmitter : MonoBehaviour {
     // beamBEnd = new Vector2(transform.position.x + 4, transform.position.y - 1);
     // Vector2[] vertices = {beamAStart, beamAEnd, beamBEnd, beamBStart};
     //
-    EmitLight(new Vector2[] {transform.position, new Vector2(transform.position.x - 0.1f, transform.position.y)}, Vector2.down);
+    EmitLight(new Vector2[] {transform.position, new Vector2(transform.position.x, transform.position.y - 0.1f)}, - Vector2.right);
 	}
 
   void OnDrawGizmosSelected() {
@@ -42,7 +42,7 @@ public class BeamEmitter : MonoBehaviour {
     if (hit.collider != null) {
       hitpoint = hit.point;
       bm.RenderLight(new Vector2[] {origin, hitpoint, new Vector2(0, 0), new Vector2(0.1f, 0.1f)});
-      Debug.Log("Noice");
+      // Debug.Log("Noice");
       FlatMirror mirror = hit.collider.gameObject.GetComponent<FlatMirror>();
       if(mirror != null){
         mirror.ReflectLight(hitpoint, dir);
