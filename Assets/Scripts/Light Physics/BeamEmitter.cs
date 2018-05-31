@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement; // loooool holy shit refactor the shit outta this crap
 
 [RequireComponent(typeof(BeamRenderer))]
 public class BeamEmitter : MonoBehaviour {
 
   public static Vector2 beamAStart, beamAEnd, beamBStart, beamBEnd;
+  public GameObject uiVictory;
+  protected bool isWon;
+
   Vector2 beamDirection;
   Vector2 hitpoint, hitpointA, hitpointB;
   BeamRenderer bm;
@@ -14,6 +19,10 @@ public class BeamEmitter : MonoBehaviour {
 	void Start () {
     beamDirection = new Vector2(4, 0);
     bm = GetComponent<BeamRenderer>();
+    if (uiVictory != null){
+      uiVictory.SetActive(false);
+    }
+    isWon = false;
 	}
 
 	// Update is called once per frame
@@ -25,6 +34,12 @@ public class BeamEmitter : MonoBehaviour {
     // Vector2[] vertices = {beamAStart, beamAEnd, beamBEnd, beamBStart};
     //
     EmitLight(new Vector2[] {transform.position, new Vector2(transform.position.x, transform.position.y - 0.1f)}, - Vector2.right);
+    if (isWon){
+      Debug.Log("WOW");
+      if (Input.GetKeyDown(KeyCode.K)){
+        SceneManager.LoadScene(Random.Range(0, SceneManager.sceneCount));
+      }
+    }
 	}
 
   void OnDrawGizmosSelected() {
@@ -53,23 +68,18 @@ public class BeamEmitter : MonoBehaviour {
       if(mirror != null){
         mirror.ReflectLight(hitpoint, dir);
       }
+      if (hit.transform.tag == "GOAL"){
+        isWon = true;
+        if (uiVictory != null){
+          uiVictory.SetActive(true);
+        }
+      }
     }
   }
 
   public void EmitLight(Vector2 [] origins, Vector2 dir){
     foreach (Vector2 origin in origins){
-      RaycastHit2D hit = Physics2D.Raycast(origin, dir, 30);
-      bool hasHit = false;
-      hitpoint = hit.point;
-      Debug.DrawLine(origin, hitpoint);
-
-      if (hit.collider != null ){
-        hasHit = true;
-        Mirror mirror = hit.collider.gameObject.GetComponent<Mirror>();
-        if(mirror != null){
-          mirror.ReflectLight(hitpoint, dir);
-        }
-      }
+      EmitLight(origin, dir);
     }
     // RaycastHit2D hitA = Physics2D.Raycast(originA, dir, 30);
     // RaycastHit2D hitB = Physics2D.Raycast(originB, dir, 30);

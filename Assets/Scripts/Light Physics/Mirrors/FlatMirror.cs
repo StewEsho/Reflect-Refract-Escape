@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BeamRenderer))]
 public class FlatMirror : BeamEmitter, Mirror {
@@ -24,6 +25,12 @@ public class FlatMirror : BeamEmitter, Mirror {
     // transform.eulerAngles = new Vector3(0, 0, zRotation);
     zRotation = transform.eulerAngles.z;
     normal = new Vector2 (Mathf.Cos(Mathf.Deg2Rad * zRotation), Mathf.Sin(Mathf.Deg2Rad * zRotation));
+    if (isWon){
+      Debug.Log(SceneManager.sceneCount);
+      if (Input.GetKeyDown(KeyCode.K)){
+        SceneManager.LoadScene(Random.Range(0, SceneManager.sceneCountInBuildSettings));
+      }
+    }
   }
 
 	public void ReflectLight(Vector2 hitA, Vector2 hitB, Vector2 incidenceDir){ //obsolete, or just use the 2-method overload
