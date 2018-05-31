@@ -6,19 +6,16 @@ using UnityEngine;
 public class BeamRenderer : MonoBehaviour {
 
   public static Vector2 beamAStart, beamAEnd, beamBStart, beamBEnd;
+  MeshFilter mf;
 
-	// Use this for initialization
-	void Start () {
+  void Start(){
+    mf = GetComponent<MeshFilter>();
+  }
 
-	}
-
-	// Update is called once per frame
-	void LateUpdate () {
-    beamAStart = BeamEmitter.beamAStart;
-    beamAEnd = BeamEmitter.beamAEnd;
-    beamBStart = BeamEmitter.beamBStart;
-    beamBEnd = BeamEmitter.beamBEnd;
-      GetComponent<MeshFilter>().mesh = createLightMesh(new Vector2[] {beamAStart, beamAEnd, beamBEnd, beamBStart});
+	public void RenderLight (Vector2[] points) {
+    Mesh light = createMeshFromPoints(points);
+    light.name = "Light";
+    mf.mesh = light;
 	}
 
   void OnDrawGizmosSelected() {
@@ -30,7 +27,7 @@ public class BeamRenderer : MonoBehaviour {
     Gizmos.DrawWireSphere(beamBEnd, radius);
   }
 
-  public Mesh createLightMesh(Vector2[] vertices2D){
+  public Mesh createMeshFromPoints(Vector2[] vertices2D){
     Vector3[] vertices =  new Vector3[vertices2D.Length];;
     for(int i = 0; i < vertices.Length; i++){
       vertices2D[i] = transform.InverseTransformPoint(vertices2D[i]);
