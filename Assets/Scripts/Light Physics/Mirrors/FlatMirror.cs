@@ -18,11 +18,6 @@ public class FlatMirror : BeamEmitter, Mirror {
   }
 
   public void Update(){
-    // zRotation += Input.GetAxis("Horizontal") * 5f;
-    // zRotation = zRotation % 360;
-    // if (zRotation < 0)
-    //   zRotation += 360;
-    // transform.eulerAngles = new Vector3(0, 0, zRotation);
     zRotation = transform.eulerAngles.z;
     normal = new Vector2 (Mathf.Cos(Mathf.Deg2Rad * zRotation), Mathf.Sin(Mathf.Deg2Rad * zRotation));
     if (isWon){
@@ -31,16 +26,6 @@ public class FlatMirror : BeamEmitter, Mirror {
         SceneManager.LoadScene(Random.Range(0, SceneManager.sceneCountInBuildSettings));
       }
     }
-  }
-
-	public void ReflectLight(Vector2 hitA, Vector2 hitB, Vector2 incidenceDir){ //obsolete, or just use the 2-method overload
-    // angle = Mathf.Acos(Vector2.Dot(normal, incidenceDir) / (normal.magnitude * incidenceDir.magnitude));
-    // float reflection_x = normal.x * Mathf.Cos(angle) - normal.y * Mathf.Sin(angle);
-    // float reflection_y = normal.x * Mathf.Sin(angle) + normal.y * Mathf.Cos(angle);
-    // reflectionDir = -1 * new Vector2 (reflection_x, reflection_y);
-    // Debug.Log(reflectionDir);
-    // Debug.DrawRay(hitA, reflectionDir * 20);
-    // Debug.DrawRay(hitB, reflectionDir * 20);
   }
 
   public void ReflectLight(Vector2 hit, Vector2 incidenceDir){
@@ -53,9 +38,6 @@ public class FlatMirror : BeamEmitter, Mirror {
       float reflection_y = normal.x * Mathf.Sin(angle) + normal.y * Mathf.Cos(angle);
       reflectionDir = new Vector2 (reflection_x, reflection_y);
       EmitLight(hit + (0.01f * normal), reflectionDir);
-      // Debug.DrawRay(hit, reflectionDir * 20, Color.green);
     }
-    if (Input.GetKeyDown(KeyCode.X))
-      Debug.Log(Vector3.Cross(normal, incidenceDir));
   }
 }

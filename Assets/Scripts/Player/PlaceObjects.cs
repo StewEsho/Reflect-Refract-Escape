@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlaceObjects : MonoBehaviour {
 
   public GameObject obj;
-  public float rotationSpeed = 5f;
+  public float rotationSpeed;
   GameObject placed_object;
   List<GameObject> placementStack;
 
@@ -26,7 +26,7 @@ public class PlaceObjects : MonoBehaviour {
     }
     if (Input.GetMouseButton(0)){
       if (placed_object != null){
-        float zRotation = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
+        float zRotation = Input.GetAxis("Mouse Y") * rotationSpeed;
         // placed_object.transform.eulerAngles = new Vector3 (0, 0, placed_object.transform.eulerAngles.z + zRotation);
         placed_object.transform.Rotate(0, 0, zRotation);
       }

@@ -49,21 +49,14 @@ public class BeamEmitter : MonoBehaviour {
   }
 
   public void EmitLight(Vector2 origin, Vector2 dir){
-
-
-    // Debug.DrawRay(beamAStart, beamDirection, Color.white);
-    // Debug.DrawRay(beamBStart, beamDirection, Color.white);
     RaycastHit2D hit = Physics2D.Raycast(origin, dir, 30);
     bool hasHit = false;
     hitpoint = hit.point;
     Debug.DrawLine(origin, hitpoint, Color.yellow);
 
-    // Debug.DrawRay(origin, dir*30);
-
     if (hit.collider != null ){
       hasHit = true;
       hitpoint = hit.point;
-      // Debug.DrawRay(origin, dir * hit.distance, Color.yellow);
       Mirror mirror = hit.collider.gameObject.GetComponent<Mirror>();
       if(mirror != null){
         mirror.ReflectLight(hitpoint, dir);
@@ -81,31 +74,5 @@ public class BeamEmitter : MonoBehaviour {
     foreach (Vector2 origin in origins){
       EmitLight(origin, dir);
     }
-    // RaycastHit2D hitA = Physics2D.Raycast(originA, dir, 30);
-    // RaycastHit2D hitB = Physics2D.Raycast(originB, dir, 30);
-    // bool hasAHit, hasBHit = false;
-    //
-    // if (hitA.collider != null ){
-    //   hasAHit = true;
-    //   hitpointA = hitA.point;
-    //   Debug.DrawLine(originA, hitpointA);
-    //   Mirror mirror = hitA.collider.gameObject.GetComponent<Mirror>();
-    //   if(mirror != null){
-    //     mirror.ReflectLight(hitpointA, dir);
-    //   }
-    // }
-    // if (hitB.collider != null ){
-    //   hasBHit = true;
-    //   hitpointB = hitB.point;
-    //   Debug.DrawLine(originB, hitpointB);
-    //   Mirror mirror = hitB.collider.gameObject.GetComponent<Mirror>();
-    //   if(mirror != null){
-    //     mirror.ReflectLight(hitpointB, dir);
-    //   }
-    // }
-    // if (hitA.collider != null && hitB.collider != null) {
-    //
-    //   bm.RenderLight(new Vector2[] {originA, originB, hitpointB, hitpointA});
-    // }
   }
 }
