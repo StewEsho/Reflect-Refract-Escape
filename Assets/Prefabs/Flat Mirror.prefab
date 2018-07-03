@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737899730787116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7680001, y: 1.3949999, z: -0.16327235}
+  m_LocalPosition: {x: -21.41693, y: 2.020274, z: -0.16327235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4915550689724028}
@@ -122,10 +122,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1737899730787116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ddbf9e1de42f174b8fe266862e0e221, type: 3}
+  m_Script: {fileID: 11500000, guid: 9be5cbef89c59a242b82371d848c3af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiVictory: {fileID: 0}
+  lightray: {fileID: 1712433330518008, guid: cf5f40821f1f0644f8f59d2a88a4ef17, type: 2}
 --- !u!212 &212682188177484664
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -139,6 +139,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

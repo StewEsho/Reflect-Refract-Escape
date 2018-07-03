@@ -4,7 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - GOAL
+  - Door
+  - exit
+  - NormalSwitch
+  - FocusSwitch
+  - Walls
+  - mirror
+  - Lightray
+  - Dialogue
+  - BeamEmitter
   layers:
   - Default
   - TransparentFX
