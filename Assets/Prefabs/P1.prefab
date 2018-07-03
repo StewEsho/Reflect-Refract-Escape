@@ -36,8 +36,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4323722005995956}
   - component: {fileID: 114088392272091362}
-  - component: {fileID: 68648664487688760}
-  - component: {fileID: 61323029969884384}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -185,8 +183,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1828909220900004}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.63, y: -2.72, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.09, y: -2.38, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4277817993526218}
@@ -230,48 +228,6 @@ CircleCollider2D:
   m_Offset: {x: 0.025, y: -0.1}
   serializedVersion: 2
   m_Radius: 0.4
---- !u!61 &61323029969884384
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1503851581578178}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 1}
-  m_EdgeRadius: 0
---- !u!68 &68648664487688760
-EdgeCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1503851581578178}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.040136963, y: -0.49623373}
-  - {x: 0.040445566, y: 0.5028018}
 --- !u!114 &114088392272091362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -283,8 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be5cbef89c59a242b82371d848c3af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightray: {fileID: 1712433330518008, guid: cf5f40821f1f0644f8f59d2a88a4ef17, type: 2}
-  numOfBeams: 7
 --- !u!114 &114192313667877222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -312,27 +266,33 @@ MonoBehaviour:
   ID: P1
   objects:
   - thumbnail: {fileID: 21300000, guid: 2a8f9c7325b9d894ea9f1c8763934abd, type: 3}
-    ghostSprite: {fileID: 21300008, guid: a28bfb2056899c04881a5d5569185cc4, type: 3}
+    ghost: {fileID: 0}
     gameObject: {fileID: 1737899730787116, guid: 48b7a17aa2ce4694fbf799cd5d08a438,
       type: 2}
   - thumbnail: {fileID: 21300002, guid: 2a8f9c7325b9d894ea9f1c8763934abd, type: 3}
-    ghostSprite: {fileID: 21300004, guid: a28bfb2056899c04881a5d5569185cc4, type: 3}
+    ghost: {fileID: 0}
     gameObject: {fileID: 1262493513116188, guid: e6a0d987e4e203341b7813c02c377de6,
       type: 2}
   - thumbnail: {fileID: 21300004, guid: 2a8f9c7325b9d894ea9f1c8763934abd, type: 3}
-    ghostSprite: {fileID: 21300006, guid: a28bfb2056899c04881a5d5569185cc4, type: 3}
+    ghost: {fileID: 0}
     gameObject: {fileID: 1827794873692448, guid: 0fe4dfbce94f4a948b4f4c3839f1956c,
       type: 2}
   - thumbnail: {fileID: 21300008, guid: 2a8f9c7325b9d894ea9f1c8763934abd, type: 3}
-    ghostSprite: {fileID: 21300000, guid: a28bfb2056899c04881a5d5569185cc4, type: 3}
+    ghost: {fileID: 0}
     gameObject: {fileID: 1747928706955862, guid: aadd644dce7e0aa4d8fea3ffe9172d72,
       type: 2}
   - thumbnail: {fileID: 21300006, guid: 2a8f9c7325b9d894ea9f1c8763934abd, type: 3}
-    ghostSprite: {fileID: 21300002, guid: a28bfb2056899c04881a5d5569185cc4, type: 3}
+    ghost: {fileID: 0}
     gameObject: {fileID: 1593077634610736, guid: 6ef50ab72ee2f5b43bea3454d5e6b294,
       type: 2}
-  rotationSpeed: 30
+  rotationSpeed: 50
   placeDistance: 1.25
+  ghosts:
+  - {fileID: 1737899730787116, guid: 54ee7616d5b4739428e5bbbd5f8b9371, type: 2}
+  - {fileID: 1262493513116188, guid: 5640f5f5417a06941b8eea26bc4408eb, type: 2}
+  - {fileID: 1827794873692448, guid: 53e4eb955fe2ba94da0a0c6f48bbaee5, type: 2}
+  - {fileID: 1747928706955862, guid: c62b53703c5be894386c8f29cc99d6e4, type: 2}
+  - {fileID: 1593077634610736, guid: 5f55fbfd68f582c4eb6a75930dc74573, type: 2}
 --- !u!212 &212020092009071090
 SpriteRenderer:
   m_ObjectHideFlags: 1

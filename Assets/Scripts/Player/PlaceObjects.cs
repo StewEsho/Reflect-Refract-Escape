@@ -9,7 +9,7 @@ public class PlaceObjects : MonoBehaviour
     [SerializeField]
     private string ID;
     [SerializeField]
-    private List<SerializableItem> objects; // list of all placable objects
+    private List<PlaceableItem> objects; // list of all placable objects
     [SerializeField]
     public float rotationSpeed;
     [SerializeField]
@@ -23,6 +23,7 @@ public class PlaceObjects : MonoBehaviour
     private GameObject placed_object;
     private bool inPlaceMode = false; // when true, player can place objects
     private Vector2 placeDir; //direction player will place their objects
+    private List<GameObject> ghosts; //list of all ghost object instances
 
     //"UI" for selecting and placing items
     private SpriteRenderer selector;
@@ -40,7 +41,7 @@ public class PlaceObjects : MonoBehaviour
             ghost = transform.Find("Ghost").gameObject;
         }
         ghostSprite = ghost.transform.GetChild(0).GetComponent<SpriteRenderer>();
-        ghostSprite.sprite = objects[objectIndex].ghostSprite;
+//        ghostSprite.sprite = objects[objectIndex].ghostSprite;
         ghost.SetActive(inPlaceMode);
         selector.transform.parent.gameObject.SetActive(inPlaceMode);
     }
@@ -77,15 +78,16 @@ public class PlaceObjects : MonoBehaviour
             //Scroll through items with bumpers
             if (Input.GetButtonDown("SelectNext_" + ID))
             {
+                ghosts[objectIndex].SetActive(false);
                 objectIndex = (int)Mathf.Repeat(objectIndex + 1, objects.Count);
                 selector.sprite = objects[objectIndex].thumbnail;
-                ghostSprite.sprite = objects[objectIndex].ghostSprite;
+//                ghostSprite.sprite = objects[objectIndex].ghostSprite;
             }
             if (Input.GetButtonDown("SelectPrev_" + ID))
             {
                 objectIndex = (int)Mathf.Repeat(objectIndex - 1, objects.Count);
                 selector.sprite = objects[objectIndex].thumbnail;
-                ghostSprite.sprite = objects[objectIndex].ghostSprite;
+//                ghostSprite.sprite = objects[objectIndex].ghostSprite;
             }
 
             //rotate objects with triggers
@@ -110,6 +112,11 @@ public class PlaceObjects : MonoBehaviour
         inPlaceMode = !inPlaceMode;
         ghost.SetActive(inPlaceMode);
         selector.transform.parent.gameObject.SetActive(inPlaceMode);
+    }
+
+    public void SetGhostList(List<GameObject> ghosts)
+    {
+        this.ghosts = ghosts;
     }
    
 }

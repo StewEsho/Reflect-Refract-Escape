@@ -36,8 +36,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4260793747638986}
   - component: {fileID: 114015336672703420}
-  - component: {fileID: 68973410704062742}
   - component: {fileID: 61427721616954580}
+  - component: {fileID: 68973410704062742}
   m_Layer: 0
   m_Name: Flat Mirror
   m_TagString: Untagged

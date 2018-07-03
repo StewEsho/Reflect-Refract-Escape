@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 68831819121970996}
   - component: {fileID: 114375201595396844}
   m_Layer: 0
-  m_Name: Convex Lens
+  m_Name: CVLens_Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ac33f460232a54298f466795ad0064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightray: {fileID: 1712433330518008, guid: cf5f40821f1f0644f8f59d2a88a4ef17, type: 2}
 --- !u!212 &212931017380747022
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -230,7 +229,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: fa3f966b5e2f2b541b6edbb8af849d49, type: 3}
-  m_Color: {r: 0.71323526, g: 0.898789, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

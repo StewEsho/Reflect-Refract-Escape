@@ -52,12 +52,13 @@
           </e>
           <e p="Management" t="Include">
             <e p="GameManager.cs" t="Include" />
+            <e p="LevelManager.cs" t="Include" />
           </e>
+          <e p="PlaceableItem.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="PlaceObjects.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
           </e>
-          <e p="SerializableItem.cs" t="Include" />
           <e p="ShowAngleText.cs" t="Include" />
           <e p="Triangulator.cs" t="Include" />
         </e>

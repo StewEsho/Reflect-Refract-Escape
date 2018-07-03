@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SerializableItem
+public class PlaceableItem
 {
     public Sprite thumbnail;
-    public Sprite ghostSprite;
+    public GameObject ghost;
     public GameObject gameObject;
 }

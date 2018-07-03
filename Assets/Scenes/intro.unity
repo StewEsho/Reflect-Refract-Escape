@@ -247,6 +247,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &312652712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 312652714}
+  - component: {fileID: 312652713}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &312652713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312652712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f191bd797d604dcb8d3189662d68117e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Placeables:
+  - {fileID: 1737899730787116, guid: 54ee7616d5b4739428e5bbbd5f8b9371, type: 2}
+  - {fileID: 1262493513116188, guid: 5640f5f5417a06941b8eea26bc4408eb, type: 2}
+  - {fileID: 1827794873692448, guid: 53e4eb955fe2ba94da0a0c6f48bbaee5, type: 2}
+  - {fileID: 1747928706955862, guid: c62b53703c5be894386c8f29cc99d6e4, type: 2}
+  - {fileID: 1593077634610736, guid: 5f55fbfd68f582c4eb6a75930dc74573, type: 2}
+--- !u!4 &312652714
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312652712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.382342, y: -0.18168907, z: -0.1211361}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &356247405
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,31 +588,6 @@ Prefab:
     - target: {fileID: 4974695641827892, guid: ba66659e613ba944d9a41602049f5589, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114448408732459932, guid: ba66659e613ba944d9a41602049f5589,
-        type: 2}
-      propertyPath: max_distance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114448408732459932, guid: ba66659e613ba944d9a41602049f5589,
-        type: 2}
-      propertyPath: speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 68648664487688760, guid: ba66659e613ba944d9a41602049f5589,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61323029969884384, guid: ba66659e613ba944d9a41602049f5589,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114448408732459932, guid: ba66659e613ba944d9a41602049f5589,
-        type: 2}
-      propertyPath: rotationSpeed
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba66659e613ba944d9a41602049f5589, type: 2}
@@ -1822,6 +1843,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1925576168468128, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
   m_IsPrefabParent: 0
@@ -1896,6 +1921,10 @@ Prefab:
         type: 2}
       propertyPath: dialogue.sentences.Array.data[1]
       value: It can open the door when light rays cast on it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925576168468128, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}

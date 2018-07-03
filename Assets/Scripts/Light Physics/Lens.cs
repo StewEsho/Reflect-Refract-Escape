@@ -38,25 +38,5 @@ public class Lens : MonoBehaviour
         float refraction_y = normal.x * Mathf.Sin(angle) + normal.y * Mathf.Cos(angle);
         refractionDir = -1 * new Vector2(refraction_x, refraction_y);
         return refractionDir;
-
-//        EmitLight(hit - 0.1f * normal, refractionDir);
-        //Cast ray across lens for output light
-        // RaycastHit2D crossLensRaycast = Physics2D.Raycast(hit, incidenceDir, 1);
-        // if (crossLensRaycast.collider != null){
-        //   EmitLight(crossLensRaycast.point.addX(-0.1f), refractionDir);
-        // } else {
-        //   EmitLight(hit + incidenceDir, incidenceDir);
-        // }
-        // }
-        // float crossSign = 0;
-        // if (Vector2.Dot(centralAxis, incidenceDir) < 0){
-        //   crossSign = Mathf.Sign(Vector3.Cross(centralAxis, incidenceDir).z);
-        // angle = (Mathf.PI) - Mathf.Acos(Vector2.Dot(centralAxis, incidenceDir) / (centralAxis.magnitude * incidenceDir.magnitude));
-        // angle *= crossSign;
-        // float reflection_x = centralAxis.x * Mathf.Cos(angle) - centralAxis.y * Mathf.Sin(angle);
-        // float reflection_y = centralAxis.x * Mathf.Sin(angle) + centralAxis.y * Mathf.Cos(angle);
-        // refractionDir = -1 * new Vector2 (reflection_x, reflection_y);
-        //   EmitLight(hit + (0.01f * centralAxis), refractionDir);
-        // }
     }
 }
