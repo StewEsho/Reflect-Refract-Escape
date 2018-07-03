@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -10,104 +11,91 @@ public class BeamEmitter : MonoBehaviour
     public static Vector2 beamAStart, beamAEnd, beamBStart, beamBEnd;
     public GameObject lightray;
     [Range(1, 12)] public int numOfBeams = 7;
-    private List<GameObject> current_light = new List<GameObject>();
+    private List<GameObject> castLightrays = new List<GameObject>();
     protected bool isWon;
     private int num_hit;
 
-    Vector2 beamDirection;
-    Vector2 hitpoint, hitpointA, hitpointB;
-    MeshFilter mf;
-    Vector2[] beamOrigins;
+    private Vector2 beamDirection;
+    private Vector2 hitpoint, hitpointA, hitpointB;
+    private MeshFilter mf;
+    private Vector2[] beamOrigins;
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         num_hit = 0;
         beamDirection = -transform.right;
         mf = GetComponent<MeshFilter>();
         isWon = false;
         beamOrigins = new Vector2[numOfBeams];
-        for (int i = 0; i < numOfBeams; i++)
+        for (var i = 0; i < numOfBeams; i++)
         {
-            float spacing = (float) (i - (numOfBeams / 2)) / 10;
-            float xSpace = spacing * Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad);
-            float ySpace = spacing * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
+            var spacing = (float) (i - numOfBeams / 2) / 10;
+            var xSpace = spacing * Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad);
+            var ySpace = spacing * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
             beamOrigins[i] = transform.position.V2().addX(xSpace).addY(ySpace);
+            var newLight = Instantiate(lightray, beamOrigins[i], Quaternion.identity);
+            newLight.GetComponent<LineRenderer>().SetPosition(0, beamOrigins[i]);
+            castLightrays.Add(newLight);
         }
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        // Destroy the old lightrays
-
-        EmitLight(beamOrigins, beamDirection);
+        EmitLight(beamDirection);
         // RenderLight(new Vector2[] {transform.position, transform.position.addX(-4), transform.position.addX(-4).addY(-4), transform.position.addY(-4)});
         num_hit = 0;
     }
 
-    public Vector2 EmitLight(Vector2 origin, Vector2 dir)
+    public List<Vector2> CalculateLightPoints(Vector2 origin, Vector2 dir)
     {
-        RaycastHit2D hit = Physics2D.Raycast(origin, dir, 30);
-        hitpoint = hit.point;
-        GameObject light_to_cast = Instantiate(lightray, transform.position, Quaternion.identity);
-        light_to_cast.GetComponent<LineRenderer>().SetPosition(0, origin);
-        light_to_cast.GetComponent<LineRenderer>().SetPosition(1, hitpoint);
+        var hit = Physics2D.Raycast(origin, dir, 30);
+        var hitpoints = new List<Vector2>();
+        hitpoints.Add(hit.point);
 
-        if (hit.collider != null)
+        if (hit.collider == null) return hitpoints;
+        
+        var mirror = hit.collider.gameObject.GetComponent<Mirror>();
+        if (mirror != null)
         {
-            Mirror mirror = hit.collider.gameObject.GetComponent<Mirror>();
-            if (mirror != null)
-            {
-                mirror.ReflectLight(hitpoint, dir, hit.normal);
-            }
-
-            Lens lens = hit.collider.gameObject.GetComponent<Lens>();
-            if (lens != null)
-            {
-                lens.RefractLight(hitpoint, dir, hit.normal);
-            }
-
-            Switch switchBttn = hit.collider.gameObject.GetComponent<Switch>();
-            if (switchBttn != null)
-            {
-                if (gameObject.name != "Ghost")
-                {
-                    switchBttn.Lightup();
-                }
-
-            }
+            hitpoints.AddRange(CalculateLightPoints(hit.point + 0.01f * hit.normal, mirror.Reflect(hit.point, dir, hit.normal)));
         }
 
-        return hitpoint;
-    }
-
-    public void EmitLight(Vector2[] origins, Vector2 dir)
-    {
-        int counter = 0;
-        List<Vector2> pointsToRender = new List<Vector2>();
-        foreach (Vector2 origin in origins)
+        var lens = hit.collider.gameObject.GetComponent<Lens>();
+        if (lens != null)
         {
-            pointsToRender.Add(origin);
-            pointsToRender.Add(EmitLight(origin, dir));
-            counter += 1;
+            hitpoints.AddRange(CalculateLightPoints(hit.point - 0.01f * hit.normal, lens.Refract(hit.point, dir, hit.normal)));
         }
+        
+        var switchBttn = hit.collider.gameObject.GetComponent<Switch>();
+        if (switchBttn != null && gameObject.name != "Ghost") switchBttn.Lightup();
 
-        RenderLight(pointsToRender.ToArray());
+        return hitpoints;
     }
 
+    public void EmitLight(Vector2 dir)
+    {
+        foreach (var ray in castLightrays)
+        {
+            var points = CalculateLightPoints(ray.transform.position, dir);
+            RenderLight(points, ray.GetComponent<LineRenderer>());
+        }
+    }
+
+    //Obsolete (don't delete tho in case we ever need the code again ;) )
     public Mesh createMeshFromPoints(Vector2[] vertices2D)
     {
-        Vector3[] vertices = new Vector3[vertices2D.Length];
-        for (int i = 0; i < vertices.Length; i++)
+        var vertices = new Vector3[vertices2D.Length];
+        for (var i = 0; i < vertices.Length; i++)
         {
             vertices2D[i] = transform.InverseTransformPoint(vertices2D[i]);
             vertices[i] = new Vector3(vertices2D[i].x, vertices2D[i].y, -0.5f);
         }
 
-        Triangulator tr = new Triangulator(vertices2D);
-        int[] newTriangles = tr.Triangulate();
-        Mesh mesh = new Mesh();
+        var tr = new Triangulator(vertices2D);
+        var newTriangles = tr.Triangulate();
+        var mesh = new Mesh();
         mesh.vertices = vertices;
         mesh.triangles = newTriangles;
         mesh.RecalculateNormals();
@@ -115,10 +103,9 @@ public class BeamEmitter : MonoBehaviour
         return mesh;
     }
 
-    public void RenderLight(Vector2[] points)
+    public void RenderLight(List<Vector2> points, LineRenderer lr)
     {
-        Mesh light = createMeshFromPoints(points);
-        light.name = "Light";
-        mf.mesh = light;
+        lr.positionCount = points.Count + 1;
+        for (var i = 0; i < points.Count; i++) lr.SetPosition(i + 1, points[i]);
     }
 }

@@ -28,7 +28,6 @@
           </e>
           <e p="Dialogs" t="Include">
             <e p="General" t="Include">
-              <e p="ButtonFlashing.cs" t="Include" />
               <e p="DialogManager.cs" t="Include" />
               <e p="DialogTrigger.cs" t="Include" />
               <e p="Dialogue.cs" t="Include" />
@@ -36,7 +35,6 @@
               <e p="TriggerDialogueCollider.cs" t="Include" />
             </e>
             <e p="Level1" t="Include">
-              <e p="ActiveLight.cs" t="Include" />
               <e p="TriggerDialogWhenLightup.cs" t="Include" />
             </e>
           </e>

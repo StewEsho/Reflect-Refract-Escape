@@ -51,7 +51,7 @@ public class PlaceObjects : MonoBehaviour
         // Wait for placement toggle
         if (Input.GetButtonDown("TogglePlacement_" + ID))
         {
-            togglePlaceMode();
+            TogglePlaceMode();
         }
 
         // objects can be deleted even if not in place mode
@@ -105,24 +105,11 @@ public class PlaceObjects : MonoBehaviour
         }
     }
 
-    void togglePlaceMode()
+    void TogglePlaceMode()
     {
         inPlaceMode = !inPlaceMode;
         ghost.SetActive(inPlaceMode);
         selector.transform.parent.gameObject.SetActive(inPlaceMode);
     }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if ( inPlaceMode == false)
-        {
-            if (collision.transform.gameObject.tag == "BeamEmitter")
-            {
-                if (Input.GetButtonDown("Place_"+ ID))
-                {
-                    Debug.Log(collision.transform.GetChild(0).GetComponent<ActiveLight>().enable);
-                    collision.transform.GetChild(0).GetComponent<ActiveLight>().enable = !collision.transform.GetChild(0).GetComponent<ActiveLight>().enable;
-                }
-            }
-        }
-    }
+   
 }

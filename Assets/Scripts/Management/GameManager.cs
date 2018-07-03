@@ -36,10 +36,5 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene((int) Mathf.Repeat(SceneManager.GetActiveScene().buildIndex + 1, SceneManager.sceneCountInBuildSettings));
             gameWon = false;
         }
-        GameObject[] lights = GameObject.FindGameObjectsWithTag("Lightray");
-        foreach (GameObject lightray in lights)
-        {
-            Destroy(lightray);
-        }
     }
 }

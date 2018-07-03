@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Lens : BeamEmitter
+public class Lens : MonoBehaviour
 {
     Vector2 centralAxis;
     float angle;
@@ -24,7 +24,10 @@ public class Lens : BeamEmitter
         centralAxis = new Vector2(Mathf.Cos(Mathf.Deg2Rad * zRotation), Mathf.Sin(Mathf.Deg2Rad * zRotation));
     }
 
-    public void RefractLight(Vector2 hit, Vector2 incidenceDir, Vector2 normal)
+    /**
+     * Returns the direction to cast a refracted light ray
+     */
+    public Vector2 Refract(Vector2 hit, Vector2 incidenceDir, Vector2 normal)
     {
         float crossSign = Mathf.Sign(Vector3.Cross(normal, incidenceDir).z);
         angle = (Mathf.PI) -
@@ -34,8 +37,9 @@ public class Lens : BeamEmitter
         float refraction_x = normal.x * Mathf.Cos(angle) - normal.y * Mathf.Sin(angle);
         float refraction_y = normal.x * Mathf.Sin(angle) + normal.y * Mathf.Cos(angle);
         refractionDir = -1 * new Vector2(refraction_x, refraction_y);
+        return refractionDir;
 
-        EmitLight(hit - 0.1f * normal, refractionDir);
+//        EmitLight(hit - 0.1f * normal, refractionDir);
         //Cast ray across lens for output light
         // RaycastHit2D crossLensRaycast = Physics2D.Raycast(hit, incidenceDir, 1);
         // if (crossLensRaycast.collider != null){
