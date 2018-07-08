@@ -39,8 +39,6 @@ public class BezierCurveCollider2D : MonoBehaviour {
 
     public List<Vector2> controlPoints, handlerPoints;
 
-    public bool isTrigger = false;
-
     [Range(3,36)]
     public int smoothness = 15;
 
@@ -54,12 +52,6 @@ public class BezierCurveCollider2D : MonoBehaviour {
     [HideInInspector]
     public EdgeCollider2D edge;
     List<Vector2> pts;
-    
-    void Start()
-    {
-        GetComponent<EdgeCollider2D>().isTrigger = isTrigger;
-    }
-
 
     public void Init()
     {

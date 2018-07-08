@@ -55,19 +55,24 @@ public class BeamEmitter : MonoBehaviour
         hitpoints.Add(hit.point);
 
         if (hit.collider == null) return hitpoints;
-        
-        var mirror = hit.collider.gameObject.GetComponent<Mirror>();
-        if (mirror != null)
-        {
-            hitpoints.AddRange(CalculateLightPoints(hit.point + 0.01f * hit.normal, mirror.Reflect(hit.point, dir, hit.normal)));
-        }
 
-        var lens = hit.collider.gameObject.GetComponent<Lens>();
-        if (lens != null)
-        {
-            hitpoints.AddRange(CalculateLightPoints(hit.point - 0.01f * hit.normal, lens.Refract(hit.point, dir, hit.normal)));
-        }
         
+        IOptic optic = hit.collider.gameObject.GetComponent<IOptic>();
+        if (optic != null)
+            if (hit.collider.transform.CompareTag("Ghost"))
+            {
+                //this object was a ghost, so continue to fire the light while rendering a ghost light
+                hitpoints.AddRange(CalculateLightPoints(hit.point - 0.01f * hit.normal, dir));
+                var ghostHit = Physics2D.Raycast(hit.point, optic.Refract(hit.point, dir, hit.normal), 30);
+//                hit.collider.gameObject.GetComponent<LineRenderer>().SetPositions(new Vector3[] {hit.point, ghostHit.point});
+                Debug.DrawLine(hit.point, ghostHit.point, Color.yellow);
+            }
+            else
+            {
+                hitpoints.AddRange(CalculateLightPoints(hit.point + 0.01f * hit.normal,
+                    optic.Refract(hit.point, dir, hit.normal)));
+            }
+
         var switchBttn = hit.collider.gameObject.GetComponent<Switch>();
         if (switchBttn != null && gameObject.name != "Ghost") switchBttn.Lightup();
 

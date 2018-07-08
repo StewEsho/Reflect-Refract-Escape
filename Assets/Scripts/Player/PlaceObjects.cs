@@ -88,18 +88,8 @@ public class PlaceObjects : MonoBehaviour
         {
             //Instansiate ghost as child
             GameObject ghost = Instantiate(obj.gameObject, ghostPositioner.position, ghostPositioner.rotation, this.transform);
-            //Set ghost's collider to trigger
-            ghost.GetComponent<Collider2D>().isTrigger = true;
-            Debug.Log(ghost.GetComponent<Collider2D>());
-            Debug.Log(ghost.GetComponent<Collider2D>().isTrigger);
-            //Set ghost's sprite color to grey + transparent
-            ghost.transform.Find("Sprite").GetComponent<SpriteRenderer>().color = new Color(0.8f, 0.8f, 0.8f, 0.5f);
-            //Set ghost's tag to "Ghost"
-            ghost.transform.tag = "Ghost";
-            //Add LineRenderer to ghost
-            ghost.AddComponent<LineRenderer>();
-            //Disable ghost
-            ghost.SetActive(false);
+            //Add GhostOptic script, which will continue the process of instansiating the ghost
+            ghost.AddComponent<GhostOptic>();
             //Add ghost to list of ghosts;
             ghosts.Add(ghost);
         }

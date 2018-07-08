@@ -46,6 +46,8 @@
           <e p="ExtensionMethods.cs" t="Include" />
           <e p="Light Physics" t="Include">
             <e p="BeamEmitter.cs" t="Include" />
+            <e p="GhostOptic.cs" t="Include" />
+            <e p="IOptic.cs" t="Include" />
             <e p="Lens.cs" t="Include" />
             <e p="Mirror.cs" t="Include" />
             <e p="Switch.cs" t="Include" />
@@ -57,7 +59,6 @@
           <e p="PlaceableItem.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="PlaceObjects.cs" t="Include" />
-            <e p="PlaceObjects_OLD.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
           </e>
           <e p="ShowAngleText.cs" t="Include" />

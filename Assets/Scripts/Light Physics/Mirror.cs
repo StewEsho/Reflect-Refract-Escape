@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Mirror : MonoBehaviour
+public class Mirror : MonoBehaviour, IOptic
 {
     Vector2 centralAxis;
     float angle;
@@ -27,7 +27,7 @@ public class Mirror : MonoBehaviour
     /**
      * Returns the direction to cast a reflected light ray
      */
-    public Vector2 Reflect(Vector2 hit, Vector2 incidenceDir, Vector2 normal)
+    public Vector2 Refract(Vector2 hit, Vector2 incidenceDir, Vector2 normal)
     {
         float crossSign = 0;
         crossSign = Mathf.Sign(Vector3.Cross(normal, incidenceDir).z);

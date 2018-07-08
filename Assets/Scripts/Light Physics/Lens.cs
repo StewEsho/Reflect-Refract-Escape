@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Lens : MonoBehaviour
+public class Lens : MonoBehaviour, IOptic
 {
     Vector2 centralAxis;
     float angle;

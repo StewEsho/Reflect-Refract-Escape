@@ -5,8 +5,6 @@ using System.Collections.Generic;
 [RequireComponent (typeof (EdgeCollider2D))]
 public class BezierCollider2D : MonoBehaviour
 {
-    public bool isTrigger = false;
-    
     public Vector2 firstPoint;
     public Vector2 secondPoint;
 
@@ -15,11 +13,6 @@ public class BezierCollider2D : MonoBehaviour
     public Vector2 handlerSecondPoint;
 
     public int pointsQuantity;
-
-    void Start()
-    {
-        GetComponent<EdgeCollider2D>().isTrigger = isTrigger;
-    }
     
     void Update(){
       handlerSecondPoint = new Vector2 (handlerFirstPoint.x, -handlerFirstPoint.y);

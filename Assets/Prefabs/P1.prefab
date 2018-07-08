@@ -218,33 +218,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1828909220900004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 309810a10457ee945a55843ac1c89e57, type: 3}
+  m_Script: {fileID: 11500000, guid: cb075411ef78404db7e7cd920f19c319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: P1
+  id: P1
   objects:
   - thumbnail: {fileID: 21300000, guid: 2a8f9c7325b9d894ea9f1c8763934abd, type: 3}
-    ghost: {fileID: 0}
     gameObject: {fileID: 1737899730787116, guid: 48b7a17aa2ce4694fbf799cd5d08a438,
       type: 2}
   - thumbnail: {fileID: 21300002, guid: 2a8f9c7325b9d894ea9f1c8763934abd, type: 3}
-    ghost: {fileID: 0}
     gameObject: {fileID: 1262493513116188, guid: e6a0d987e4e203341b7813c02c377de6,
       type: 2}
   - thumbnail: {fileID: 21300004, guid: 2a8f9c7325b9d894ea9f1c8763934abd, type: 3}
-    ghost: {fileID: 0}
     gameObject: {fileID: 1827794873692448, guid: 0fe4dfbce94f4a948b4f4c3839f1956c,
       type: 2}
   - thumbnail: {fileID: 21300008, guid: 2a8f9c7325b9d894ea9f1c8763934abd, type: 3}
-    ghost: {fileID: 0}
     gameObject: {fileID: 1747928706955862, guid: aadd644dce7e0aa4d8fea3ffe9172d72,
       type: 2}
   - thumbnail: {fileID: 21300006, guid: 2a8f9c7325b9d894ea9f1c8763934abd, type: 3}
-    ghost: {fileID: 0}
     gameObject: {fileID: 1593077634610736, guid: 6ef50ab72ee2f5b43bea3454d5e6b294,
       type: 2}
   rotationSpeed: 50
-  placeDistance: 1.25
+  ghostDistance: 1.25
+  controllerDeadzone: 0.19
 --- !u!212 &212444677491129664
 SpriteRenderer:
   m_ObjectHideFlags: 1
