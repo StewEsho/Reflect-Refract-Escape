@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 68320623473589384}
   - component: {fileID: 61270446587362398}
   m_Layer: 0
-  m_Name: Flat Mirror
+  m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

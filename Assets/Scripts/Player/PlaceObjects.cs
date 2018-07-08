@@ -7,116 +7,124 @@ public class PlaceObjects : MonoBehaviour
 {
 
     [SerializeField]
-    private string ID;
+    private string id; //"P1" or "P2"
     [SerializeField]
-    private List<PlaceableItem> objects; // list of all placable objects
+    private List<PlaceableItem> objects; // list of all placable placableObjects
+    private List<GameObject> ghosts; //list of ghosts (NOT serializable)
     [SerializeField]
-    public float rotationSpeed;
+    private float rotationSpeed = 50;
     [SerializeField]
-    public float placeDistance = 1.25f;
+    private float ghostDistance = 1.25f;
+    [SerializeField] 
+    private float controllerDeadzone = 0.19f;
 
-    public readonly int OBJECT_LIMIT = 5;
-    public readonly float DEADZONE = 0.19f;
-
-    private int objectIndex = 0; // which object in objects to select
+    private int objectIndex = 0;
     private List<GameObject> placementStack;
-    private GameObject placed_object;
-    private bool inPlaceMode = false; // when true, player can place objects
-    private Vector2 placeDir; //direction player will place their objects
-    private List<GameObject> ghosts; //list of all ghost object instances
+    private bool inPlaceMode = false;
+    private Vector2 ghostPlacementDir;
 
-    //"UI" for selecting and placing items
+    //UI for selecting and placing items
     private SpriteRenderer selector;
-    private GameObject ghost;
-    private SpriteRenderer ghostSprite;
+    private Transform ghostPositioner; //a positioner which is moved and rotated, while the selected ghost matches its transform.
 
-    // Use this for initialization
     void Start()
     {
         placementStack = new List<GameObject>();
+        ghosts = new List<GameObject>();
         selector = transform.Find("Selector").Find("Item").GetComponent<SpriteRenderer>();
         selector.sprite = objects[objectIndex].thumbnail;
-        if (transform.Find("Ghost").gameObject != null)
-        {
-            ghost = transform.Find("Ghost").gameObject;
-        }
-        ghostSprite = ghost.transform.GetChild(0).GetComponent<SpriteRenderer>();
-//        ghostSprite.sprite = objects[objectIndex].ghostSprite;
-        ghost.SetActive(inPlaceMode);
-        selector.transform.parent.gameObject.SetActive(inPlaceMode);
+        ghostPositioner = transform.Find("Ghost Positioner");
+        CreateGhosts(); //instansiates ghosts for this level
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Wait for placement toggle
-        if (Input.GetButtonDown("TogglePlacement_" + ID))
+        // Wait for placement mode toggle
+        if (Input.GetButtonDown("TogglePlacement_" + id))
         {
             TogglePlaceMode();
         }
 
-        // objects can be deleted even if not in place mode
-        // if ((Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl)) && Input.GetKeyDown(KeyCode.Z) && placementStack.Count > 0){
-        if (Input.GetButtonDown("Delete_" + ID) && placementStack.Count > 0)
-        {
-            GameObject objectToRemove = placementStack.Pop();
-            Destroy(objectToRemove);
-        }
-
+        //Controls for when in place mode
         if (inPlaceMode)
         {
             //Press A to place selected object
-            if (Input.GetButtonDown("Place_" + ID) && placementStack.Count < OBJECT_LIMIT)
+            if (Input.GetButtonDown("Place_" + id))
             {
-                placed_object = Instantiate(objects[objectIndex].gameObject,
-                    ghost.transform.position,
-                    ghost.transform.rotation) as GameObject;
-                placementStack.Add(placed_object);
-                placed_object = null;
+                placementStack.Add(Instantiate(objects[objectIndex].gameObject, ghostPositioner.position, ghostPositioner.rotation));
             }
-
-            //Scroll through items with bumpers
-            if (Input.GetButtonDown("SelectNext_" + ID))
+            
+            //Use bumpers to scroll through items
+            if (Input.GetButtonDown("SelectNext_" + id))
             {
-                ghosts[objectIndex].SetActive(false);
-                objectIndex = (int)Mathf.Repeat(objectIndex + 1, objects.Count);
-                selector.sprite = objects[objectIndex].thumbnail;
-//                ghostSprite.sprite = objects[objectIndex].ghostSprite;
+                SelectNewObject(objectIndex + 1);
             }
-            if (Input.GetButtonDown("SelectPrev_" + ID))
+            if (Input.GetButtonDown("SelectPrev_" + id))
             {
-                objectIndex = (int)Mathf.Repeat(objectIndex - 1, objects.Count);
-                selector.sprite = objects[objectIndex].thumbnail;
-//                ghostSprite.sprite = objects[objectIndex].ghostSprite;
+                SelectNewObject(objectIndex - 1);
             }
-
-            //rotate objects with triggers
-            float zRotation = Input.GetAxis("Triggers_" + ID) * rotationSpeed * Time.deltaTime;
-            ghost.transform.Rotate(0, 0, zRotation);
-
-            placeDir = new Vector2(Input.GetAxisRaw("DPadX_" + ID), -Input.GetAxisRaw("DPadY_" + ID));
-
-            //move ghost with left stick
-            if (Mathf.Abs(Input.GetAxisRaw("DPadX_" + ID)) > DEADZONE)
-            {
-                Vector3 eulerangle = ghost.transform.eulerAngles;
-                ghost.transform.RotateAround(transform.position, new Vector3(0, 0, 1), -Input.GetAxisRaw("DPadX_" + ID) * rotationSpeed / 5);
-                ghost.transform.eulerAngles = eulerangle;
-
-            }
+            
+            //rotate positioner with triggers
+            float zRotation = Input.GetAxis("Triggers_" + id) * rotationSpeed * Time.deltaTime;
+            ghostPositioner.transform.Rotate(0, 0, zRotation);
+            
+            //move positioner with right stick
+            ghostPlacementDir = new Vector2(Input.GetAxis("RightJoystickX_" + id), -Input.GetAxis("RightJoystickY_" + id));
+            if(ghostPlacementDir.sqrMagnitude > controllerDeadzone)
+                ghostPositioner.localPosition = ghostPlacementDir.normalized * ghostDistance;
+            
+            //Ensure ghost's transform matches the positioner's transform
+            ghosts[objectIndex].transform.position = ghostPositioner.position;
+            ghosts[objectIndex].transform.rotation = ghostPositioner.rotation;
         }
     }
 
-    void TogglePlaceMode()
+    public void CreateGhosts()
+    {
+        //first, align the ghost positioner properly;
+        ghostPositioner.localPosition = Vector2.left * ghostDistance;
+        ghostPositioner.rotation = Quaternion.identity;
+        foreach (PlaceableItem obj in objects)
+        {
+            //Instansiate ghost as child
+            GameObject ghost = Instantiate(obj.gameObject, ghostPositioner.position, ghostPositioner.rotation, this.transform);
+            //Set ghost's collider to trigger
+            ghost.GetComponent<Collider2D>().isTrigger = true;
+            Debug.Log(ghost.GetComponent<Collider2D>());
+            Debug.Log(ghost.GetComponent<Collider2D>().isTrigger);
+            //Set ghost's sprite color to grey + transparent
+            ghost.transform.Find("Sprite").GetComponent<SpriteRenderer>().color = new Color(0.8f, 0.8f, 0.8f, 0.5f);
+            //Set ghost's tag to "Ghost"
+            ghost.transform.tag = "Ghost";
+            //Add LineRenderer to ghost
+            ghost.AddComponent<LineRenderer>();
+            //Disable ghost
+            ghost.SetActive(false);
+            //Add ghost to list of ghosts;
+            ghosts.Add(ghost);
+        }
+    }
+
+    public void ClearGhosts()
+    {
+        
+    }
+
+    public void TogglePlaceMode()
     {
         inPlaceMode = !inPlaceMode;
-        ghost.SetActive(inPlaceMode);
+        ghosts[objectIndex].SetActive(inPlaceMode);
         selector.transform.parent.gameObject.SetActive(inPlaceMode);
     }
 
-    public void SetGhostList(List<GameObject> ghosts)
+    public void SelectNewObject(int index)
     {
-        this.ghosts = ghosts;
+        //disable the old ghost
+        ghosts[objectIndex].SetActive(false);
+        //set index for new object, enable new ghost, change thumbnail accordingly.
+        objectIndex = (int) Mathf.Repeat(index, ghosts.Count);
+        ghosts[objectIndex].SetActive(true);
+        selector.sprite = objects[objectIndex].thumbnail;
     }
-   
+
 }

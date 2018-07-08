@@ -57,6 +57,7 @@
           <e p="PlaceableItem.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="PlaceObjects.cs" t="Include" />
+            <e p="PlaceObjects_OLD.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
           </e>
           <e p="ShowAngleText.cs" t="Include" />

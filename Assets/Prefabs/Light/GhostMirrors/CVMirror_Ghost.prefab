@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3afa0677955dd45bbb4587fd5fc296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTrigger: 1
   firstPoint: {x: 0, y: 0.5}
   secondPoint: {x: 0, y: -0.5}
   handlerFirstPoint: {x: 0.10000038, y: 0.45000005}
@@ -175,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300006, guid: fa3f966b5e2f2b541b6edbb8af849d49, type: 3}
+  m_Sprite: {fileID: 21300006, guid: a28bfb2056899c04881a5d5569185cc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

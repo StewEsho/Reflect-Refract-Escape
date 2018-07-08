@@ -6,6 +6,5 @@ using UnityEngine;
 public class PlaceableItem
 {
     public Sprite thumbnail;
-    public GameObject ghost;
     public GameObject gameObject;
 }

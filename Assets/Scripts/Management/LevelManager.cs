@@ -12,16 +12,22 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        for (int i = 1; i < 3; i++)
-        {
-            GameObject player = GameObject.Find("/P" + i);
-            players[i - 1] = player;
-            player.GetComponent<PlaceObjects>().SetGhostList(Placeables);
-            foreach (GameObject ghost in Placeables)
-            {
-                Instantiate(ghost, Vector3.up, Quaternion.identity, player.transform);
-            }
-        }
+//        for (int i = 1; i < 3; i++)
+//        {
+//            GameObject player = GameObject.Find("/P" + i);
+//            players[i - 1] = player;
+//            List<GameObject> ghostInstances = new List<GameObject>();
+//            GameObject ghost;
+//            PlaceObjects playerPOScript = player.GetComponent<PlaceObjects>();
+//            foreach (GameObject g in Placeables)
+//            {
+//                ghost = Instantiate(g, player.transform);
+//                ghost.transform.localPosition = Vector2.left * playerPOScript.ghostDistance;
+//                ghost.SetActive(false);
+//                ghostInstances.Add(ghost);
+//            }
+//            playerPOScript.SetGhostList(ghostInstances);
+//        }
     }
 
     void Update()
