@@ -110,8 +110,11 @@
                   <folding>
                     <marker date="1531152451970" expanded="true" signature="6:78" ph="..." />
                     <marker date="1531152451970" expanded="true" signature="141:308" ph="/* To be added to an empty game object as a CHILD of the carryable item. ... */" />
+                    <marker date="1531152451970" expanded="true" signature="347:1255" ph="{...}" />
                     <marker date="1531152451970" expanded="true" signature="422:507" ph="{...}" />
+                    <marker date="1531152451970" expanded="true" signature="562:763" ph="{...}" />
                     <marker date="1531152451970" expanded="true" signature="602:633" ph="{...}" />
+                    <marker date="1531152451970" expanded="true" signature="640:760" ph="{...}" />
                     <marker date="1531152451970" expanded="true" signature="805:1020" ph="{...}" />
                     <marker date="1531152451970" expanded="true" signature="852:1017" ph="{...}" />
                     <marker date="1531152451970" expanded="true" signature="1062:1253" ph="{...}" />
@@ -199,7 +202,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1750" />
@@ -308,12 +311,12 @@
       <workItem from="1530626112649" duration="4563000" />
       <workItem from="1530927713778" duration="597000" />
       <workItem from="1531068515811" duration="14915000" />
-      <workItem from="1531144220413" duration="8067000" />
+      <workItem from="1531144220413" duration="8533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50655000" />
+    <option name="totallyTimeSpent" value="51121000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -325,7 +328,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286517" />
@@ -697,8 +700,11 @@
           <folding>
             <marker date="1531152451970" expanded="true" signature="6:78" ph="..." />
             <marker date="1531152451970" expanded="true" signature="141:308" ph="/* To be added to an empty game object as a CHILD of the carryable item. ... */" />
+            <marker date="1531152451970" expanded="true" signature="347:1255" ph="{...}" />
             <marker date="1531152451970" expanded="true" signature="422:507" ph="{...}" />
+            <marker date="1531152451970" expanded="true" signature="562:763" ph="{...}" />
             <marker date="1531152451970" expanded="true" signature="602:633" ph="{...}" />
+            <marker date="1531152451970" expanded="true" signature="640:760" ph="{...}" />
             <marker date="1531152451970" expanded="true" signature="805:1020" ph="{...}" />
             <marker date="1531152451970" expanded="true" signature="852:1017" ph="{...}" />
             <marker date="1531152451970" expanded="true" signature="1062:1253" ph="{...}" />
