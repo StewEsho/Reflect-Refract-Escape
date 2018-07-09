@@ -15,6 +15,8 @@ public class GhostOptic : MonoBehaviour
 		Debug.Log(GetComponent<Collider2D>().isTrigger);
 		//Set ghost's sprite color to grey + transparent
 		transform.Find("Sprite").GetComponent<SpriteRenderer>().color = new Color(0.8f, 0.8f, 0.8f, 0.5f);
+		//Disable carryable on ghost
+		transform.Find("Carryable").gameObject.SetActive(false);
 		//Set ghost's tag to "Ghost"
 		transform.tag = "Ghost";
 //		//Add LineRenderer to ghost

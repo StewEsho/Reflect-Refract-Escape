@@ -60,6 +60,12 @@ public class PlaceObjects : MonoBehaviour
             //Controls for when in place mode
             if (state == State.PlaceMode)
             {
+                // Exit placement mode with B as well as X
+                if (Input.GetButtonDown("Delete_" + id))
+                {
+                    TogglePlaceMode();
+                }
+                
                 //Press A to place selected object
                 if (Input.GetButtonDown("Place_" + id))
                 {
