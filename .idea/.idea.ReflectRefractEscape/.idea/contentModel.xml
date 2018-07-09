@@ -37,6 +37,7 @@
             <e p="Level1" t="Include">
               <e p="TriggerDialogWhenLightup.cs" t="Include" />
             </e>
+            <e p="TooltipZone.cs" t="Include" />
           </e>
           <e p="Doors and Switches" t="Include">
             <e p="DoorControl.cs" t="Include" />
