@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Placeables:
-  - {fileID: 1737899730787116, guid: 54ee7616d5b4739428e5bbbd5f8b9371, type: 2}
+  - {fileID: 0}
 --- !u!4 &312652714
 Transform:
   m_ObjectHideFlags: 0
