@@ -152,6 +152,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1720185688844074, guid: 194a78980a179aa4f8cc5a649f0e33ac, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 194a78980a179aa4f8cc5a649f0e33ac, type: 2}
   m_IsPrefabParent: 0
@@ -1663,12 +1667,6 @@ Prefab:
       propertyPath: m_Name
       value: TooltipTrigger
       objectReference: {fileID: 0}
-    - target: {fileID: 114637929426020180, guid: 1b0650ee8b4b7e34fb751a7067c94cf5,
-        type: 2}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 70de0004fdb4af4409a97ba20c3433c7,
-        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
   m_IsPrefabParent: 0
@@ -1684,6 +1682,7 @@ GameObject:
   - component: {fileID: 1639132059}
   - component: {fileID: 1639132058}
   - component: {fileID: 1639132061}
+  - component: {fileID: 1639132062}
   m_Layer: 0
   m_Name: door
   m_TagString: Door
@@ -1848,6 +1847,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7060eb4266f2f14da93f5de5bcd1053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1639132062
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1639132056}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b4dedddad7abcb84d8fd90e70956458b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1718318037
 GameObject:
   m_ObjectHideFlags: 0

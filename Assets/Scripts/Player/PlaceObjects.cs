@@ -32,6 +32,7 @@ public class PlaceObjects : MonoBehaviour
     private bool isCarrying = false; //true when carrying an optic
     private GameObject carryInRange, carry; //object in range to be carried, and object that is actually being carried.
     private Vector2 ghostPlacementDir;
+    private bool canRotateObject = true;
 
     //UI for selecting and placing items
     private SpriteRenderer selector; //TODO: move this ui and tooltips to a seperate PlayerUI Script
@@ -74,11 +75,11 @@ public class PlaceObjects : MonoBehaviour
                 }
             
                 //Use bumpers to scroll through items
-                if (Input.GetButtonDown("SelectNext_" + id))
+                if (Input.GetButtonDown("RB_" + id))
                 {
                     SelectNewObject(objectIndex + 1);
                 }
-                if (Input.GetButtonDown("SelectPrev_" + id))
+                if (Input.GetButtonDown("LB_" + id))
                 {
                     SelectNewObject(objectIndex - 1);
                 }
@@ -88,9 +89,11 @@ public class PlaceObjects : MonoBehaviour
                 if(ghostPlacementDir.sqrMagnitude > controllerDeadzone)
                     ghostPositioner.localPosition = ghostPlacementDir.normalized * ghostDistance;
             
-                //rotate positioner with triggers
-                float zRotation = Input.GetAxis("Triggers_" + id) * rotationSpeed * Time.deltaTime;
-                ghostPositioner.transform.Rotate(0, 0, zRotation);
+                //rotate object with triggers
+                if (canRotateObject && (Input.GetAxis("LTrig_" + id) > 0.1f || Input.GetAxis("RTrig_" + id) > 0.1f))
+                {
+                    StartCoroutine(RotateObjects(ghostPositioner.transform));
+                }
                 
                 //Ensure ghost's transform matches the positioner's transform
                 ghosts[objectIndex].transform.position = ghostPositioner.position;
@@ -108,8 +111,10 @@ public class PlaceObjects : MonoBehaviour
                             carry.transform.localPosition = dir.normalized * ghostDistance;
             
                         //rotate object with triggers
-                        float zRotation = Input.GetAxis("Triggers_" + id) * rotationSpeed * Time.deltaTime;
-                        carry.transform.Rotate(0, 0, zRotation);
+                        if (canRotateObject && (Input.GetAxis("LTrig_" + id) > 0.1f || Input.GetAxis("RTrig_" + id) > 0.1f))
+                        {
+                            StartCoroutine(RotateObjects(carry.transform));
+                        }
                         
                         //Press B to delete the object being carried.
                         if (Input.GetButtonDown("B_" + id))
@@ -231,6 +236,15 @@ public class PlaceObjects : MonoBehaviour
     public string GetState()
     {
         return state.ToString();
+    }
+
+    IEnumerator RotateObjects(Transform t)
+    {
+        float zRotation = Mathf.Sign(Input.GetAxis("Triggers_" + id)) * 15;
+        t.transform.Rotate(0, 0, zRotation);
+        canRotateObject = false;
+        yield return new WaitForSeconds(0.1f);
+        canRotateObject = true;
     }
 
 }

@@ -27,6 +27,10 @@ public class Switch : MonoBehaviour {
         if (controlled_item.tag == "Door")
         {
             controlled_item.SetActive(!isActive);
+//            if (isActive)
+//            {
+//                controlled_item.GetComponent<DoorControl>().OpenDoor();
+//            }
         }
     }
     isActive = false;
