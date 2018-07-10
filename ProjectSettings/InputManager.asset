@@ -70,7 +70,7 @@ InputManager:
     axis: 4
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Place_P1
+    m_Name: A_P1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -86,7 +86,7 @@ InputManager:
     axis: 0
     joyNum: 14
   - serializedVersion: 3
-    m_Name: Delete_P1
+    m_Name: B_P1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -102,7 +102,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: TogglePlacement_P1
+    m_Name: X_P1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -118,7 +118,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Pickup_P1
+    m_Name: Y_P1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -134,7 +134,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: SelectNext_P1
+    m_Name: RB_P1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -150,7 +150,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: SelectPrev_P1
+    m_Name: LB_P1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -310,7 +310,7 @@ InputManager:
     axis: 4
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Place_P2
+    m_Name: A_P2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -326,7 +326,7 @@ InputManager:
     axis: 0
     joyNum: 3
   - serializedVersion: 3
-    m_Name: Delete_P2
+    m_Name: B_P2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -342,7 +342,7 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
-    m_Name: TogglePlacement_P2
+    m_Name: X_P2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -358,7 +358,7 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Pickup_P2
+    m_Name: Y_P2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -374,7 +374,7 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
-    m_Name: SelectNext_P2
+    m_Name: RB_P2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -390,7 +390,7 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
-    m_Name: SelectPrev_P2
+    m_Name: LB_P2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

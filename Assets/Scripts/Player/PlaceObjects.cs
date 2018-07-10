@@ -51,7 +51,7 @@ public class PlaceObjects : MonoBehaviour
     void Update()
     {
         // Wait for placement mode toggle
-        if (Input.GetButtonDown("TogglePlacement_" + id))
+        if (Input.GetButtonDown("X_" + id))
         {
             TogglePlaceMode();
         }
@@ -62,13 +62,13 @@ public class PlaceObjects : MonoBehaviour
             if (state == State.PlaceMode)
             {
                 // Exit placement mode with B as well as X
-                if (Input.GetButtonDown("Delete_" + id))
+                if (Input.GetButtonDown("B_" + id))
                 {
                     TogglePlaceMode();
                 }
                 
                 //Press A to place selected object
-                if (Input.GetButtonDown("Place_" + id))
+                if (Input.GetButtonDown("A_" + id))
                 {
                     placementStack.Add(Instantiate(objects[objectIndex].gameObject, ghostPositioner.position, ghostPositioner.rotation));
                 }
@@ -112,7 +112,7 @@ public class PlaceObjects : MonoBehaviour
                         carry.transform.Rotate(0, 0, zRotation);
                         
                         //Press B to delete the object being carried.
-                        if (Input.GetButtonDown("Delete_" + id))
+                        if (Input.GetButtonDown("B_" + id))
                         {
                             Destroy(carry);
                             carry = null;
@@ -121,7 +121,7 @@ public class PlaceObjects : MonoBehaviour
                         }
                     
                         //Press A to place down object being carried.
-                        if (Input.GetButtonDown("Place_" + id))
+                        if (Input.GetButtonDown("A_" + id))
                         {
                             carry.transform.SetParent(null);
                             carry = null; //By setting the reference to null, the object will no longer move around and thus be "placed".
@@ -144,7 +144,7 @@ public class PlaceObjects : MonoBehaviour
         }
         else if (state == State.Standard) //Not placing nor carrying an object
         {
-            if (carryInRange != null && Input.GetButtonDown("Place_" + id))
+            if (carryInRange != null && Input.GetButtonDown("A_" + id))
             {
                 carry = carryInRange;
                 state = State.Carrying;

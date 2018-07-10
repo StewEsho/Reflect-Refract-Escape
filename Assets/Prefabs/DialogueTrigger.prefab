@@ -19,10 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4353317439179894}
-  - component: {fileID: 212602698656974054}
   - component: {fileID: 61500366914986274}
-  - component: {fileID: 114789354626732896}
-  - component: {fileID: 114583576540485936}
+  - component: {fileID: 212461756514271744}
+  - component: {fileID: 114637929426020180}
   m_Layer: 2
   m_Name: DialogueTrigger
   m_TagString: Dialogue
@@ -36,9 +35,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1925576168468128}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.68, y: -2.8, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -366.2202, y: -191.666, z: -8.593191}
+  m_LocalScale: {x: 4.5215974, y: 12.726646, z: 1.6468596}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -68,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26, y: 0.22}
   m_EdgeRadius: 0
---- !u!114 &114583576540485936
+--- !u!114 &114637929426020180
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -76,27 +75,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1925576168468128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
+  m_Script: {fileID: 11500000, guid: d9ddf076b7f06404c9a4c02ad4b0f309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences: []
-  sequence: 0
---- !u!114 &114789354626732896
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1925576168468128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89cdfbc6f8c616f4588d2ae34d24d620, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  object_to_instantiate: {fileID: 0}
-  position_to_instantiate: {x: 0, y: 0, z: 0}
---- !u!212 &212602698656974054
+  Tooltip: {fileID: 1328179185196870, guid: 3dcfa9564f53e444391e67cd2a9e9e57, type: 2}
+  ButtonPrompt: A_
+  icon: {fileID: 21300000, guid: 70de0004fdb4af4409a97ba20c3433c7, type: 3}
+--- !u!212 &212461756514271744
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -131,13 +116,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300430, guid: 35cad3429745efa45a625ecf3113eb8b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.26, y: 0.22}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
