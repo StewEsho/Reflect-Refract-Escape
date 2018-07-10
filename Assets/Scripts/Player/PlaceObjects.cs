@@ -44,6 +44,7 @@ public class PlaceObjects : MonoBehaviour
         selector = transform.Find("Selector").Find("Item").GetComponent<SpriteRenderer>();
         selector.sprite = objects[objectIndex].thumbnail;
         ghostPositioner = transform.Find("Ghost Positioner");
+        RestrictObjects(); //restricts the objects used for this level
         CreateGhosts(); //instansiates ghosts for this level
     }
 
@@ -155,6 +156,22 @@ public class PlaceObjects : MonoBehaviour
         
     }
 
+    public void RestrictObjects()
+    {
+        GameObject r = GameObject.Find("/LevelItemRestrictor");
+        if (r != null)
+        {
+            //Iterate through the list of whitelisted items and set this player's objects to that list.
+            //I know its not the most efficent method but idgaf
+            objects = new List<PlaceableItem>();
+            LevelItemRestrictor restictor = r.GetComponent<LevelItemRestrictor>();
+            foreach (PlaceableItem obj in restictor.GetLevelItems())
+            {
+                objects.Add(obj);
+            }
+        }
+    }
+
     public void CreateGhosts()
     {
         //first, align the ghost positioner properly;
@@ -178,12 +195,16 @@ public class PlaceObjects : MonoBehaviour
 
     public void TogglePlaceMode()
     {
-        if (state != State.Carrying)
+        if (this.objects.Count > 0 && state != State.Carrying)
         {
             inPlaceMode = !inPlaceMode;
             state = inPlaceMode ? State.PlaceMode : State.Standard;
             ghosts[objectIndex].SetActive(inPlaceMode);
-            selector.transform.parent.gameObject.SetActive(inPlaceMode);
+            if (this.objects.Count > 1)
+            {
+                selector.transform.parent.gameObject.SetActive(inPlaceMode);
+                selector.sprite = objects[objectIndex].thumbnail;
+            }
         }
     }
 
