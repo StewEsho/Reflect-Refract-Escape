@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PlaceObjects.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlaceObjects.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlaceObjects.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="282">
-              <caret line="103" column="19" lean-forward="true" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+              <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
               <folding>
                 <marker date="1531235111695" expanded="false" signature="6:92" ph="..." />
                 <marker date="1531235111695" expanded="true" signature="135:9704" ph="{...}" />
@@ -107,31 +107,70 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
-                <marker date="1529432620126" expanded="false" signature="6:78" ph="..." />
-                <marker date="1529432620126" expanded="true" signature="114:500" ph="{...}" />
-                <marker date="1529432620126" expanded="true" signature="189:281" ph="{...}" />
-                <marker date="1529432620126" expanded="true" signature="302:329" ph="{...}" />
-                <marker date="1529432620126" expanded="true" signature="428:498" ph="{...}" />
+                <marker date="1531240656518" expanded="false" signature="6:78" ph="..." />
+                <marker date="1531240656518" expanded="true" signature="114:502" ph="{...}" />
+                <marker date="1531240656518" expanded="true" signature="189:281" ph="{...}" />
+                <marker date="1531240656518" expanded="true" signature="302:329" ph="{...}" />
+                <marker date="1531240656518" expanded="true" signature="430:500" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Switch.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Door.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Doors and Switches/Door.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+              <folding>
+                <marker date="1531240777355" expanded="false" signature="6:78" ph="..." />
+                <marker date="1531240777355" expanded="true" signature="150:630" ph="{...}" />
+                <marker date="1531240777355" expanded="true" signature="259:304" ph="{...}" />
+                <marker date="1531240777355" expanded="true" signature="387:451" ph="{...}" />
+                <marker date="1531240777355" expanded="true" signature="535:628" ph="{...}" />
+                <marker date="1531240777355" expanded="true" signature="560:625" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Switch.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Doors and Switches/Switch.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="32" column="15" selection-start-line="29" selection-start-column="17" selection-end-line="32" selection-end-column="15" />
+            <state relative-caret-position="225">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
               <folding>
-                <marker date="1531233001205" expanded="false" signature="6:141" ph="..." />
-                <marker date="1531233001205" expanded="true" signature="179:1146" ph="{...}" />
-                <marker date="1531233001205" expanded="true" signature="384:537" ph="{...}" />
-                <marker date="1531233001205" expanded="true" signature="558:1073" ph="{...}" />
-                <marker date="1531233001205" expanded="true" signature="667:1046" ph="{...}" />
-                <marker date="1531233001205" expanded="true" signature="682:793" ph="/* NOTE: create and use Interactable interface instead ... */" />
-                <marker date="1531233001205" expanded="true" signature="836:1040" ph="{...}" />
-                <marker date="1531233001205" expanded="true" signature="897:1030" ph="/* if (isActive) ... */" />
-                <marker date="1531233001205" expanded="true" signature="1108:1143" ph="{...}" />
+                <marker date="1531241093660" expanded="false" signature="6:141" ph="..." />
+                <marker date="1531241093660" expanded="true" signature="179:1016" ph="{...}" />
+                <marker date="1531241093660" expanded="true" signature="394:547" ph="{...}" />
+                <marker date="1531241093660" expanded="true" signature="578:942" ph="{...}" />
+                <marker date="1531241093660" expanded="true" signature="670:915" ph="{...}" />
+                <marker date="1531241093660" expanded="true" signature="689:802" ph="/* NOTE: create and use Interactable interface instead ... */" />
+                <marker date="1531241093660" expanded="true" signature="978:1013" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeamEmitter.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Light Physics/BeamEmitter.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="76" column="73" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="81" />
+              <folding>
+                <marker date="1531240656483" expanded="false" signature="6:154" ph="..." />
+                <marker date="1531240656483" expanded="true" signature="257:4344" ph="{...}" />
+                <marker date="1531240656483" expanded="true" signature="738:1514" ph="{...}" />
+                <marker date="1531240656483" expanded="true" signature="963:1508" ph="{...}" />
+                <marker date="1531240656483" expanded="true" signature="1580:1803" ph="{...}" />
+                <marker date="1531240656483" expanded="true" signature="1879:3164" ph="{...}" />
+                <marker date="1531240656483" expanded="true" signature="2239:2774" ph="{...}" />
+                <marker date="1531240656483" expanded="true" signature="2791:2972" ph="{...}" />
+                <marker date="1531240656483" expanded="true" signature="3204:3422" ph="{...}" />
+                <marker date="1531240656483" expanded="true" signature="3253:3416" ph="{...}" />
+                <marker date="1531240656483" expanded="true" signature="3556:4136" ph="{...}" />
+                <marker date="1531240656483" expanded="true" signature="3667:3843" ph="{...}" />
+                <marker date="1531240656483" expanded="true" signature="4204:4342" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -174,6 +213,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Doors and Switches/Switch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Light Physics/Lens.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogs/General/DialogTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Doors and Switches/Door.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogs/General/Dialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogs/General/TriggerDialogueCollider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Light Physics/BeamEmitter.cs" root0="FORCE_HIGHLIGHTING" />
@@ -205,7 +245,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Light Physics/Lens.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Light Physics/Mirror.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Light Physics/IOptic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Light Physics/BeamEmitter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Colliders/BezierCollider2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Colliders/BezierCurveCollider2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Shaders/VertexShader.shader" />
@@ -215,10 +254,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Management/LevelItemRestrictor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogs/TooltipZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Doors and Switches/DoorControl.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Doors and Switches/Switch.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/General/ExtensionMethods.cs" />
         <option value="$PROJECT_DIR$/ProjectSettings/InputManager.asset" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlaceObjects.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Light Physics/BeamEmitter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Doors and Switches/Door.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Doors and Switches/Switch.cs" />
       </list>
     </option>
   </component>
@@ -248,6 +289,40 @@
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="ReflectRefractEscape (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ReflectRefractEscape (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ReflectRefractEscape (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ReflectRefractEscape (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ReflectRefractEscape (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Doors and Switches" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="ReflectRefractEscape (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Light Physics" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -336,12 +411,12 @@
       <workItem from="1530927713778" duration="597000" />
       <workItem from="1531068515811" duration="14915000" />
       <workItem from="1531144220413" duration="14798000" />
-      <workItem from="1531230690540" duration="4460000" />
+      <workItem from="1531230690540" duration="6561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61846000" />
+    <option name="totallyTimeSpent" value="63947000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -391,7 +466,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlaceableItem.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/ShowAngleText.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Triangulator.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Management/GameManager.cs">
@@ -538,13 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Light Physics/BeamEmitter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="65" column="58" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlaceableItem.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Shaders/VertexShader.shader">
       <provider selected="true" editor-type-id="text-editor">
@@ -623,29 +690,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <marker date="1529432620126" expanded="false" signature="6:78" ph="..." />
-            <marker date="1529432620126" expanded="true" signature="114:500" ph="{...}" />
-            <marker date="1529432620126" expanded="true" signature="189:281" ph="{...}" />
-            <marker date="1529432620126" expanded="true" signature="302:329" ph="{...}" />
-            <marker date="1529432620126" expanded="true" signature="428:498" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Doors and Switches/Switch.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="32" column="15" selection-start-line="29" selection-start-column="17" selection-end-line="32" selection-end-column="15" />
-          <folding>
-            <marker date="1531233001205" expanded="false" signature="6:141" ph="..." />
-            <marker date="1531233001205" expanded="true" signature="179:1146" ph="{...}" />
-            <marker date="1531233001205" expanded="true" signature="384:537" ph="{...}" />
-            <marker date="1531233001205" expanded="true" signature="558:1073" ph="{...}" />
-            <marker date="1531233001205" expanded="true" signature="667:1046" ph="{...}" />
-            <marker date="1531233001205" expanded="true" signature="682:793" ph="/* NOTE: create and use Interactable interface instead ... */" />
-            <marker date="1531233001205" expanded="true" signature="836:1040" ph="{...}" />
-            <marker date="1531233001205" expanded="true" signature="897:1030" ph="/* if (isActive) ... */" />
-            <marker date="1531233001205" expanded="true" signature="1108:1143" ph="{...}" />
+            <marker date="1531240656518" expanded="false" signature="6:78" ph="..." />
+            <marker date="1531240656518" expanded="true" signature="114:502" ph="{...}" />
+            <marker date="1531240656518" expanded="true" signature="189:281" ph="{...}" />
+            <marker date="1531240656518" expanded="true" signature="302:329" ph="{...}" />
+            <marker date="1531240656518" expanded="true" signature="430:500" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -682,7 +731,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlaceObjects.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
-          <caret line="103" column="19" lean-forward="true" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+          <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
           <folding>
             <marker date="1531235111695" expanded="false" signature="6:92" ph="..." />
             <marker date="1531235111695" expanded="true" signature="135:9704" ph="{...}" />
@@ -722,6 +771,59 @@
             <marker date="1531235111695" expanded="true" signature="9296:9337" ph="{...}" />
             <marker date="1531235111695" expanded="true" signature="9367:9412" ph="{...}" />
             <marker date="1531235111695" expanded="true" signature="9456:9701" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Light Physics/BeamEmitter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="76" column="73" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="81" />
+          <folding>
+            <marker date="1531240656483" expanded="false" signature="6:154" ph="..." />
+            <marker date="1531240656483" expanded="true" signature="257:4344" ph="{...}" />
+            <marker date="1531240656483" expanded="true" signature="738:1514" ph="{...}" />
+            <marker date="1531240656483" expanded="true" signature="963:1508" ph="{...}" />
+            <marker date="1531240656483" expanded="true" signature="1580:1803" ph="{...}" />
+            <marker date="1531240656483" expanded="true" signature="1879:3164" ph="{...}" />
+            <marker date="1531240656483" expanded="true" signature="2239:2774" ph="{...}" />
+            <marker date="1531240656483" expanded="true" signature="2791:2972" ph="{...}" />
+            <marker date="1531240656483" expanded="true" signature="3204:3422" ph="{...}" />
+            <marker date="1531240656483" expanded="true" signature="3253:3416" ph="{...}" />
+            <marker date="1531240656483" expanded="true" signature="3556:4136" ph="{...}" />
+            <marker date="1531240656483" expanded="true" signature="3667:3843" ph="{...}" />
+            <marker date="1531240656483" expanded="true" signature="4204:4342" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Doors and Switches/Door.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding>
+            <marker date="1531240777355" expanded="false" signature="6:78" ph="..." />
+            <marker date="1531240777355" expanded="true" signature="150:630" ph="{...}" />
+            <marker date="1531240777355" expanded="true" signature="259:304" ph="{...}" />
+            <marker date="1531240777355" expanded="true" signature="387:451" ph="{...}" />
+            <marker date="1531240777355" expanded="true" signature="535:628" ph="{...}" />
+            <marker date="1531240777355" expanded="true" signature="560:625" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Doors and Switches/Switch.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <marker date="1531241093660" expanded="false" signature="6:141" ph="..." />
+            <marker date="1531241093660" expanded="true" signature="179:1016" ph="{...}" />
+            <marker date="1531241093660" expanded="true" signature="394:547" ph="{...}" />
+            <marker date="1531241093660" expanded="true" signature="578:942" ph="{...}" />
+            <marker date="1531241093660" expanded="true" signature="670:915" ph="{...}" />
+            <marker date="1531241093660" expanded="true" signature="689:802" ph="/* NOTE: create and use Interactable interface instead ... */" />
+            <marker date="1531241093660" expanded="true" signature="978:1013" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -17,8 +17,8 @@ public class FocusSwitch : Switch {
   }
 
 	// Use this for initialization
-  /** Overrides Switch.Lightup */
-	public override void Lightup()
+  /** Overrides Switch.Activate */
+	public override void Activate()
     {
       numberOfHits++;
       Debug.Log("SphagettiOH OHS");

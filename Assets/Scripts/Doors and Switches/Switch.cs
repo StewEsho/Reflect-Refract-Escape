@@ -9,35 +9,29 @@ public class Switch : MonoBehaviour {
     public bool isActive;
     protected Light lightsource;
     [SerializeField]
-    protected List<GameObject> controlled_items;
+    protected List<GameObject> ControlledItems;
 
 	// Use this for initialization
-	void Start () {
+    private void Start () {
     isWon = false;
     isActive = false;
     lightsource = transform.GetChild(0).GetComponent<Light>(); //maybe use seperate sprite based animation?
 	}
 
-  void LateUpdate(){
+    private void LateUpdate(){
     lightsource.intensity = isActive ? 20 : 0;
-    foreach (GameObject controlled_item in controlled_items)
-    {
-        // NOTE: create and use Interactable interface instead
-        // item.GetComponent<Interactable>().activate();
-        if (controlled_item.tag == "Door")
-        {
-            controlled_item.SetActive(!isActive);
-//            if (isActive)
-//            {
-//                controlled_item.GetComponent<DoorControl>().OpenDoor();
-//            }
-        }
-    }
+      foreach (var item in ControlledItems)
+      {
+          // NOTE: create and use Interactable interface instead
+          // item.GetComponent<Interactable>().activate();
+          var door = item.GetComponent<Door>();
+          if (door != null) door.SetDoorState(isActive);
+      }
     isActive = false;
 
   }
 
-    public virtual void Lightup()
+    public virtual void Activate()
     {
       isActive = true;
     }

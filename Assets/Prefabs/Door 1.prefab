@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4302005575243662}
   - component: {fileID: 212692547862953942}
   - component: {fileID: 61257648553613770}
+  - component: {fileID: 95282318705383150}
+  - component: {fileID: 114321868853186602}
   m_Layer: 0
   m_Name: Door 1
   m_TagString: Door
@@ -35,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1453823979083576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.68, y: -2.991, z: 0}
+  m_LocalPosition: {x: 5.3426633, y: 3.0086203, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,6 +68,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 2}
   m_EdgeRadius: 0
+--- !u!95 &95282318705383150
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1453823979083576}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99aa83a599f987d408a3868f1d85b466, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114321868853186602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1453823979083576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df33f1aeb6fe71d49b479b6927b52121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212692547862953942
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -101,8 +132,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Sprite: {fileID: 21300000, guid: d46930b13ba59db46b337ae1d585376a, type: 3}
-  m_Color: {r: 0.98730886, g: 1, b: 0.3443396, a: 1}
+  m_Sprite: {fileID: 21300136, guid: d46930b13ba59db46b337ae1d585376a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2

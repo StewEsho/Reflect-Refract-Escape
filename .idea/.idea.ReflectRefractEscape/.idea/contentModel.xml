@@ -40,6 +40,7 @@
             <e p="TooltipZone.cs" t="Include" />
           </e>
           <e p="Doors and Switches" t="Include">
+            <e p="Door.cs" t="Include" />
             <e p="DoorControl.cs" t="Include" />
             <e p="Exit.cs" t="Include" />
             <e p="FocusSwitch.cs" t="Include" />

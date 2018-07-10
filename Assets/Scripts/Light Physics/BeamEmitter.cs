@@ -74,7 +74,7 @@ public class BeamEmitter : MonoBehaviour
             }
 
         var switchBttn = hit.collider.gameObject.GetComponent<Switch>();
-        if (switchBttn != null && gameObject.name != "Ghost") switchBttn.Lightup();
+        if (switchBttn != null && gameObject.name != "Ghost") switchBttn.Activate();
 
         return hitpoints;
     }
