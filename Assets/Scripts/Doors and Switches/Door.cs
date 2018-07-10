@@ -16,7 +16,7 @@ public class Door : MonoBehaviour
 	}
 
 	// Close the door if open, and open the door if closed
-	public void ToggleDoor()
+	public void Toggle()
 	{
 		isOpen = !isOpen;
 		animator.SetBool("isOpen", isOpen);
