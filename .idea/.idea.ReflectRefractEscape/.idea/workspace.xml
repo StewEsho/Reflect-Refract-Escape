@@ -60,23 +60,23 @@
       <file leaf-file-name="TooltipZone.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Dialogs/TooltipZone.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+            <state relative-caret-position="555">
+              <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
               <folding>
-                <marker date="1531191565195" expanded="true" signature="99:2275" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="528:694" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="745:1311" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="792:1308" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="898:1060" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="1142:1304" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="1360:1884" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="1366:1569" ph="/* holy shit the duplicate code this is probably the shittiest code i've ever written ~ stew ... */" />
-                <marker date="1531191565195" expanded="true" signature="1649:1725" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="1805:1881" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="1933:2273" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="2007:2270" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="2069:2123" ph="{...}" />
-                <marker date="1531191565195" expanded="true" signature="2186:2240" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="99:2402" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="637:803" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="854:1420" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="901:1417" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="1007:1169" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="1251:1413" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="1469:2011" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="1475:1678" ph="/* holy shit the duplicate code this is probably the shittiest code i've ever written ~ stew ... */" />
+                <marker date="1531192605936" expanded="true" signature="1758:1843" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="1923:2008" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="2060:2400" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="2134:2397" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="2196:2250" ph="{...}" />
+                <marker date="1531192605936" expanded="true" signature="2313:2367" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -321,12 +321,12 @@
       <workItem from="1530626112649" duration="4563000" />
       <workItem from="1530927713778" duration="597000" />
       <workItem from="1531068515811" duration="14915000" />
-      <workItem from="1531144220413" duration="13502000" />
+      <workItem from="1531144220413" duration="14198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56090000" />
+    <option name="totallyTimeSpent" value="56786000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -786,23 +786,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Dialogs/TooltipZone.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        <state relative-caret-position="555">
+          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
           <folding>
-            <marker date="1531191565195" expanded="true" signature="99:2275" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="528:694" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="745:1311" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="792:1308" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="898:1060" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="1142:1304" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="1360:1884" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="1366:1569" ph="/* holy shit the duplicate code this is probably the shittiest code i've ever written ~ stew ... */" />
-            <marker date="1531191565195" expanded="true" signature="1649:1725" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="1805:1881" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="1933:2273" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="2007:2270" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="2069:2123" ph="{...}" />
-            <marker date="1531191565195" expanded="true" signature="2186:2240" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="99:2402" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="637:803" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="854:1420" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="901:1417" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="1007:1169" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="1251:1413" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="1469:2011" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="1475:1678" ph="/* holy shit the duplicate code this is probably the shittiest code i've ever written ~ stew ... */" />
+            <marker date="1531192605936" expanded="true" signature="1758:1843" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="1923:2008" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="2060:2400" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="2134:2397" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="2196:2250" ph="{...}" />
+            <marker date="1531192605936" expanded="true" signature="2313:2367" ph="{...}" />
           </folding>
         </state>
       </provider>

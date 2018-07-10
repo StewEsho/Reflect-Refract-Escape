@@ -10,6 +10,8 @@ public class TooltipZone : MonoBehaviour
 	[SerializeField]
 	[Tooltip("Do not set this field for an automatic button icon to be displayed.")]
 	private Sprite icon;
+	public bool IsRepeatable = false; //if true, tooltip will reappear on reentry even if initially dismissed
+	
 	private GameObject promptP1, promptP2;
 	private bool hasP1Activated, hasP2Activated = false;
 	private int numOfPlayersInside = 0;
@@ -47,13 +49,13 @@ public class TooltipZone : MonoBehaviour
 		{
 			Destroy(promptP1);
 			promptP1 = null;
-			hasP1Activated = true;
+			hasP1Activated = !IsRepeatable;
 		}
 		if (Input.GetButtonDown(ButtonPrompt + "P2") && other.transform.name == "P2")
 		{
 			Destroy(promptP2);
 			promptP2 = null;
-			hasP2Activated = true;
+			hasP2Activated = !IsRepeatable;
 		}
 	}
 
