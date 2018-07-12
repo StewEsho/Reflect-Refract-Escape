@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ public class BeamEmitter : MonoBehaviour
 {
     public static Vector2 beamAStart, beamAEnd, beamBStart, beamBEnd;
     public GameObject lightray;
+    public bool IsDelayed = false;
     [Range(1, 12)] public int numOfBeams = 7;
     private List<GameObject> castLightrays = new List<GameObject>();
     protected bool isWon;
@@ -43,9 +45,16 @@ public class BeamEmitter : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        EmitLight(beamDirection);
-        // RenderLight(new Vector2[] {transform.position, transform.position.addX(-4), transform.position.addX(-4).addY(-4), transform.position.addY(-4)});
-        num_hit = 0;
+        if (!IsDelayed)
+        {
+            EmitLight(beamDirection);
+            // RenderLight(new Vector2[] {transform.position, transform.position.addX(-4), transform.position.addX(-4).addY(-4), transform.position.addY(-4)});
+            num_hit = 0;
+        }
+        else
+        {
+            StartCoroutine(Pause());
+        }
     }
 
     public List<Vector2> CalculateLightPoints(Vector2 origin, Vector2 dir)
@@ -112,5 +121,19 @@ public class BeamEmitter : MonoBehaviour
     {
         lr.positionCount = points.Count + 1;
         for (var i = 0; i < points.Count; i++) lr.SetPosition(i + 1, points[i]);
+    }
+
+    IEnumerator Pause()
+    {
+        foreach (var ray in castLightrays)
+        {
+            ray.SetActive(false);
+        }
+        yield return new WaitForSeconds(5);
+        foreach (var ray in castLightrays)
+        {
+            ray.SetActive(true);
+        }
+        IsDelayed = false;
     }
 }
