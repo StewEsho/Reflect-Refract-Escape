@@ -5,6 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class PlaceableItem
 {
-    public Sprite thumbnail; //the thumbnail of the placable object
-    public GameObject gameObject; //The object itself. Will be instansiated when object is placed.
+    public Sprite thumbnail;
+    public GameObject gameObject;
 }

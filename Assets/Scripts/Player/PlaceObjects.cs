@@ -33,6 +33,7 @@ public class PlaceObjects : MonoBehaviour
     private GameObject carryInRange, carry; //object in range to be carried, and object that is actually being carried.
     private Vector2 ghostPlacementDir;
     private bool canRotateObject = true;
+    private bool toggle = false;
 
     //UI for selecting and placing items
     private SpriteRenderer selector; //TODO: move this ui and tooltips to a seperate PlayerUI Script
@@ -94,7 +95,22 @@ public class PlaceObjects : MonoBehaviour
                 {
                     StartCoroutine(RotateObjects(ghostPositioner.transform));
                 }
-                
+                //Alternative Rotation controls: Using arrow key on the dpad to rotate the mirror. Each time a key is pressed rotate 15 degree (not continuous rotation)
+                if (canRotateObject)
+                {
+                    if (Input.GetAxis("DPadX_" + id) != 0 && toggle == false)
+                    {
+                        float rotation = Input.GetAxis("DPadX_" + id);
+                        toggle = true;
+                        ghostPositioner
+                            .transform.Rotate(0, 0, rotation * 15);
+                    }
+                    if (Input.GetAxis("DPadX_" + id) == 0 && toggle == true)
+                    {
+                        toggle = false;
+                    }
+
+                }
                 //Ensure ghost's transform matches the positioner's transform
                 ghosts[objectIndex].transform.position = ghostPositioner.position;
                 ghosts[objectIndex].transform.rotation = ghostPositioner.rotation;
@@ -107,15 +123,29 @@ public class PlaceObjects : MonoBehaviour
                     {
                         //move object with right stick
                         Vector2 dir = new Vector2(Input.GetAxis("RightJoystickX_" + id), -Input.GetAxis("RightJoystickY_" + id));
-                        if(dir.sqrMagnitude > controllerDeadzone)
+                        if (dir.sqrMagnitude > controllerDeadzone)
                             carry.transform.localPosition = dir.normalized * ghostDistance;
-            
+
                         //rotate object with triggers
                         if (canRotateObject && (Input.GetAxis("LTrig_" + id) > 0.1f || Input.GetAxis("RTrig_" + id) > 0.1f))
                         {
                             StartCoroutine(RotateObjects(carry.transform));
                         }
-                        
+                        //Alternative Rotation controls: Using arrow key on the dpad to rotate the mirror. Each time a key is pressed rotate 15 degree (not continuous rotation)
+                        if (canRotateObject)
+                        {
+                            if (Input.GetAxis("DPadX_" + id) != 0 && toggle == false)
+                            {
+                                float rotation = Input.GetAxis("DPadX_" + id);
+                                toggle = true;
+                                carry.transform.Rotate(0, 0, rotation * 15);
+                            }
+                            if (Input.GetAxis("DPadX_" + id) == 0 && toggle == true)
+                            {
+                                toggle = false;
+                            }
+
+                        }
                         //Press B to delete the object being carried.
                         if (Input.GetButtonDown("B_" + id))
                         {
