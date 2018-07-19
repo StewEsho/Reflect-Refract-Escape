@@ -4,9 +4,11 @@
 public class TooltipZone : MonoBehaviour
 {
 	public GameObject Tooltip;
+    public bool is_trigger;
 	[Header("Button Settings")]
 	[Tooltip("Button to be pressed to dismiss the prompt for the player.")]
 	public string ButtonPrompt;
+    public int sequence;
 	[SerializeField]
 	[Tooltip("Do not set this field for an automatic button icon to be displayed.")]
 	private Sprite icon;
@@ -25,6 +27,7 @@ public class TooltipZone : MonoBehaviour
 	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
+
 		if (other.transform.CompareTag("Player"))
 		{
 			numOfPlayersInside++;
@@ -45,15 +48,17 @@ public class TooltipZone : MonoBehaviour
 	{
 		//holy shit the duplicate code this is probably the shittiest code i've ever written ~ stew
 		//TODO: tell stew to be a better fuckin programmer this is a disgrace. stop being lazy and use a size 2 tuple
-		if (Input.GetButtonDown(ButtonPrompt + "P1") && other.transform.name == "P1")
+		if ((Input.GetButtonDown(ButtonPrompt + "P1") || Input.GetAxis(ButtonPrompt + "P1") != 0) && other.transform.name == "P1")
 		{
-			Destroy(promptP1);
+            is_trigger = true;
+            Destroy(promptP1);
 			promptP1 = null;
 			hasP1Activated = !IsRepeatable;
 		}
-		if (Input.GetButtonDown(ButtonPrompt + "P2") && other.transform.name == "P2")
+		if ((Input.GetButtonDown(ButtonPrompt + "P2") || Input.GetAxis(ButtonPrompt + "P2") != 0) && other.transform.name == "P2")
 		{
-			Destroy(promptP2);
+            is_trigger = true;
+            Destroy(promptP2);
 			promptP2 = null;
 			hasP2Activated = !IsRepeatable;
 		}
@@ -61,7 +66,8 @@ public class TooltipZone : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.transform.CompareTag("Player") && numOfPlayersInside <= 1)
+        is_trigger = true;
+        if (other.transform.CompareTag("Player") && numOfPlayersInside <= 1)
 		{
 			if (other.transform.name == "P1") //duplicate code >:(
 			{

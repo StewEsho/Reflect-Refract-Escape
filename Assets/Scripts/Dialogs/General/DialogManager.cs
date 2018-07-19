@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour {
+
+
+    private int sequence = 0;
     void Start()
     {
         Debug.Log("DialogManager is up!");
@@ -12,6 +15,30 @@ public class DialogManager : MonoBehaviour {
     void Update()
     {
         // TODO: Do we need a manager, or can we just subsidize the dialog creation to the events that triggered the creation in the first place?
+        // I think we still need a manager, in order to spawn the tool tip zone in some kind of order.
+        // Right now the tooltip will be activate based on the sequence number it has. A better way to do it is to activate it based on the id of the tooltip.
+        int child_num = transform.childCount;
+        List<Transform> childs = new List<Transform>();
+        for (int i = 0; i < child_num; i++)
+        {
+            childs.Add(transform.GetChild(i));
+        }
+        foreach (Transform child in childs)
+        {
+            TooltipZone TooltipScript = child.gameObject.GetComponent<TooltipZone>();
+            if (TooltipScript.is_trigger == true && TooltipScript.sequence == sequence)
+            {
+                foreach(Transform otherchild in childs)
+                {
+                    if (otherchild.gameObject.GetComponent<TooltipZone>().sequence == sequence + 1)
+                    {
+                        otherchild.gameObject.SetActive(true);
+                    }
+                }
+                sequence += 1;
+            }
+        }
+        
     }
 //    public Text DisplayText;
 //    public Queue<string> texts = new Queue<string>();
