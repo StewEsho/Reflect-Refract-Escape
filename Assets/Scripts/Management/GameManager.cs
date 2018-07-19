@@ -9,20 +9,23 @@ public class GameManager : MonoBehaviour
     public int one_star;
     public int two_star;
     public int three_star;
-    public Animator controller;
+    private Animator controller;
     private bool gameWon;
     public GameObject UIpanel;
     private bool toggle;
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+//        DontDestroyOnLoad(gameObject);
     }
 
     // Use this for initialization
     void Start()
     {
         toggle = false;
+        controller = GameObject.Find("/Canvas/Rating").GetComponent<Animator>();
+        Debug.Log(controller);
+//        controller.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
