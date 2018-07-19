@@ -268,6 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cb3be1085b25b46bd100f5831afd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  one_star: 0
+  two_star: 0
+  three_star: 0
+  controller: {fileID: 0}
   UIpanel: {fileID: 1087086139}
 --- !u!4 &478680611
 Transform:
@@ -339,7 +343,7 @@ Prefab:
         type: 2}
       propertyPath: ControlledItems.Array.data[0]
       value: 
-      objectReference: {fileID: 427112068}
+      objectReference: {fileID: 175157637}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a11ff1319855d045850371446f3d0ed, type: 2}
   m_IsPrefabAsset: 0
@@ -2862,7 +2866,7 @@ Prefab:
         type: 2}
       propertyPath: ControlledItems.Array.data[0]
       value: 
-      objectReference: {fileID: 175157637}
+      objectReference: {fileID: 427112068}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a11ff1319855d045850371446f3d0ed, type: 2}
   m_IsPrefabAsset: 0
@@ -2896,8 +2900,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalAxis: LeftJoystickX_P1
   m_VerticalAxis: LeftJoystickY_P1
-  m_SubmitButton: Place_P1
-  m_CancelButton: Delete_P1
+  m_SubmitButton: A_P1
+  m_CancelButton: B_P1
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
