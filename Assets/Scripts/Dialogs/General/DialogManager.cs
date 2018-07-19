@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class DialogManager : MonoBehaviour {
 
 
-    private int sequence = 0;
     void Start()
     {
         Debug.Log("DialogManager is up!");
@@ -26,16 +25,12 @@ public class DialogManager : MonoBehaviour {
         foreach (Transform child in childs)
         {
             TooltipZone TooltipScript = child.gameObject.GetComponent<TooltipZone>();
-            if (TooltipScript.is_trigger == true && TooltipScript.sequence == sequence)
+            if (TooltipScript.is_trigger)
             {
-                foreach(Transform otherchild in childs)
+                foreach (GameObject active_item in TooltipScript.active_items)
                 {
-                    if (otherchild.gameObject.GetComponent<TooltipZone>().sequence == sequence + 1)
-                    {
-                        otherchild.gameObject.SetActive(true);
-                    }
+                    active_item.SetActive(true);
                 }
-                sequence += 1;
             }
         }
         

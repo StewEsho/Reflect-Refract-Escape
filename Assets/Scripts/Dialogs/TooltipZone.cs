@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Collider2D))]
 public class TooltipZone : MonoBehaviour
@@ -8,7 +9,7 @@ public class TooltipZone : MonoBehaviour
 	[Header("Button Settings")]
 	[Tooltip("Button to be pressed to dismiss the prompt for the player.")]
 	public string ButtonPrompt;
-    public int sequence;
+    public List<GameObject> active_items;
 	[SerializeField]
 	[Tooltip("Do not set this field for an automatic button icon to be displayed.")]
 	private Sprite icon;
