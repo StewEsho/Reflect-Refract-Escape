@@ -19,7 +19,7 @@ public class Switch : MonoBehaviour {
 	}
 
     private void LateUpdate(){
-    lightsource.intensity = isActive ? 20 : 0;
+    lightsource.intensity = isActive ? 20 : 5;
       foreach (var item in ControlledItems)
       {
           // NOTE: create and use Interactable interface instead

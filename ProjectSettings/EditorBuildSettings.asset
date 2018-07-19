@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial2.unity
     guid: 9b575be94d5f2e74bb10efc86b9cbc28
   - enabled: 1
+    path: Assets/Scenes/Tutorial4(pickup).unity
+    guid: 293248fd3e867eb4cafc688f1e8829a8
+  - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 127acc597e64dc0468b3e162c77bde2a
   - enabled: 1

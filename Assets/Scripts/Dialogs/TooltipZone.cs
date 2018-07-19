@@ -11,6 +11,8 @@ public class TooltipZone : MonoBehaviour
 	[Tooltip("Do not set this field for an automatic button icon to be displayed.")]
 	private Sprite icon;
 	public bool IsRepeatable = false; //if true, tooltip will reappear on reentry even if initially dismissed
+	public bool ForP1 = true; //active when p1 enters?
+	public bool ForP2 = true; //active when p2 enters?
 	
 	private GameObject promptP1, promptP2;
 	private bool hasP1Activated, hasP2Activated = false;
@@ -18,8 +20,8 @@ public class TooltipZone : MonoBehaviour
 
 	void Awake()
 	{
-		if (icon == null)
-			icon = Resources.Load<Sprite>("Xbox One/ButtonPrompt");
+//		if (icon == null)
+//			icon = Resources.Load<Sprite>("Xbox One/ButtonPrompt");
 		Tooltip.transform.Find("Sprite").GetComponent<SpriteRenderer>().sprite = icon;
 	}
 	
@@ -28,15 +30,17 @@ public class TooltipZone : MonoBehaviour
 		if (other.transform.CompareTag("Player"))
 		{
 			numOfPlayersInside++;
-			if (other.transform.name == "P1" && !hasP1Activated) //duplicate code >:(
+			if (ForP1 && other.transform.name == "P1" && !hasP1Activated) //duplicate code >:(
 			{
 				promptP1 = Instantiate(Tooltip, other.transform); //perhaps use object pooling instead ;)
 				promptP1.transform.localPosition = Vector2.up * 1.5f;
+				promptP1.transform.Find("Sprite").GetComponent<SpriteRenderer>().sprite = icon;
 			}
-			else if (other.transform.name == "P2" && !hasP2Activated) //duplicate code >:(
+			else if (ForP2 && other.transform.name == "P2" && !hasP2Activated) //duplicate code >:(
 			{
 				promptP2 = Instantiate(Tooltip, other.transform); //perhaps use object pooling instead ;)
 				promptP2.transform.localPosition = Vector2.up * 1.5f;
+				promptP1.transform.Find("Sprite").GetComponent<SpriteRenderer>().sprite = icon;
 			}
 		}
 	}
@@ -45,13 +49,13 @@ public class TooltipZone : MonoBehaviour
 	{
 		//holy shit the duplicate code this is probably the shittiest code i've ever written ~ stew
 		//TODO: tell stew to be a better fuckin programmer this is a disgrace. stop being lazy and use a size 2 tuple
-		if (Input.GetButtonDown(ButtonPrompt + "P1") && other.transform.name == "P1")
+		if (ForP1 && Input.GetButtonDown(ButtonPrompt + "P1") && other.transform.name == "P1")
 		{
 			Destroy(promptP1);
 			promptP1 = null;
 			hasP1Activated = !IsRepeatable;
 		}
-		if (Input.GetButtonDown(ButtonPrompt + "P2") && other.transform.name == "P2")
+		if (ForP2 && Input.GetButtonDown(ButtonPrompt + "P2") && other.transform.name == "P2")
 		{
 			Destroy(promptP2);
 			promptP2 = null;
@@ -63,12 +67,12 @@ public class TooltipZone : MonoBehaviour
 	{
 		if (other.transform.CompareTag("Player") && numOfPlayersInside <= 1)
 		{
-			if (other.transform.name == "P1") //duplicate code >:(
+			if (ForP1 && other.transform.name == "P1") //duplicate code >:(
 			{
 				Destroy(promptP1);
 				promptP1 = null;
 			}
-			else if (other.transform.name == "P2") //duplicate code >:(
+			else if (ForP2 && other.transform.name == "P2") //duplicate code >:(
 			{
 				Destroy(promptP2);
 				promptP2 = null;
