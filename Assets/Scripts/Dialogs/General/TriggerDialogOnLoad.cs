@@ -8,5 +8,12 @@ public class TriggerDialogOnLoad : MonoBehaviour {
 	void Start () {
         GetComponent<DialogTrigger>().triggerDialogue();
 	}
-	
+
+    private void Update()
+    {
+        if (GetComponent<DialogTrigger>().is_over)
+        {
+            FindObjectOfType<BeamEmitter>().active_light = true;
+        }
+    }
 }

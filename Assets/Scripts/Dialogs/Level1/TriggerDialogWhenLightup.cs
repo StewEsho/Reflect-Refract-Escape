@@ -14,7 +14,7 @@ public class TriggerDialogWhenLightup : MonoBehaviour {
 		if (sw.transform.GetChild(0).GetComponent<Light>().intensity == 20)
         {
             GetComponent<DialogTrigger>().triggerDialogue();
-//            Destroy(this);
+            Destroy(this);
         }
 	}
 }

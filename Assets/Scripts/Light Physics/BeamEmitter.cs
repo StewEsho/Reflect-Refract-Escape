@@ -12,6 +12,7 @@ public class BeamEmitter : MonoBehaviour
     public static Vector2 beamAStart, beamAEnd, beamBStart, beamBEnd;
     public GameObject lightray;
     public bool IsDelayed = false;
+    public bool active_light;
     [Range(1, 12)] public int numOfBeams = 7;
     private List<GameObject> castLightrays = new List<GameObject>();
     protected bool isWon;
@@ -45,16 +46,37 @@ public class BeamEmitter : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!IsDelayed)
+        if (active_light)
         {
-            EmitLight(beamDirection);
-            // RenderLight(new Vector2[] {transform.position, transform.position.addX(-4), transform.position.addX(-4).addY(-4), transform.position.addY(-4)});
-            num_hit = 0;
+            foreach (var ray in castLightrays)
+            {
+                ray.SetActive(true);
+            }
         }
-        else
+        else if (!active_light)
         {
-            StartCoroutine(Pause());
+            foreach (var ray in castLightrays)
+            {
+                ray.SetActive(false);
+            }
         }
+        if (active_light)
+        {
+            if (!IsDelayed)
+            {
+                EmitLight(beamDirection);
+                // RenderLight(new Vector2[] {transform.position, transform.position.addX(-4), transform.position.addX(-4).addY(-4), transform.position.addY(-4)});
+                num_hit = 0;
+            }
+            else
+            {
+                StartCoroutine(Pause());
+            }
+        }
+        //TODO: Optimize the code after finishing up the entire system.
+
+
+
     }
 
     public List<Vector2> CalculateLightPoints(Vector2 origin, Vector2 dir)
