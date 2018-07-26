@@ -50,7 +50,7 @@ public class TooltipZone : MonoBehaviour
 			{
 				promptP2 = Instantiate(Tooltip, other.transform); //perhaps use object pooling instead ;)
 				promptP2.transform.localPosition = Vector2.up * 1.5f;
-				promptP1.transform.Find("Sprite").GetComponent<SpriteRenderer>().sprite = icon;
+				promptP2.transform.Find("Sprite").GetComponent<SpriteRenderer>().sprite = icon;
 			}
 		}
 	}
@@ -80,7 +80,15 @@ public class TooltipZone : MonoBehaviour
             Destroy(promptP2);
 			promptP2 = null;
 			hasP2Activated = !IsRepeatable;
-		}
+            if (dialogTrigger != null)
+            {
+                if (dialogTrigger.has_triggered == false)
+                {
+                    dialogTrigger.triggerDialogue();
+                    dialogTrigger.has_triggered = true;
+                }
+            }
+        }
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
