@@ -7,6 +7,7 @@ public class DialogTrigger : MonoBehaviour {
     public Dialogue dialogue;
     public int sequence;
     public bool is_over;
+    public bool has_triggered = false;
 
     private void Update()
     {

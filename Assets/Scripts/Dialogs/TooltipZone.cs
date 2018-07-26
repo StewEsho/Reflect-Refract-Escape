@@ -16,6 +16,7 @@ public class TooltipZone : MonoBehaviour
 	public bool IsRepeatable = false; //if true, tooltip will reappear on reentry even if initially dismissed
 	public bool ForP1 = true; //active when p1 enters?
 	public bool ForP2 = true; //active when p2 enters?
+    private DialogTrigger dialogTrigger;
 
 	private GameObject promptP1, promptP2;
 	private bool hasP1Activated, hasP2Activated = false;
@@ -28,7 +29,12 @@ public class TooltipZone : MonoBehaviour
 		Tooltip.transform.Find("Sprite").GetComponent<SpriteRenderer>().sprite = icon;
 	}
 
-	private void OnTriggerEnter2D(Collider2D other)
+    private void Start()
+    {
+        dialogTrigger = GetComponent<DialogTrigger>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
 	{
 
 		if (other.transform.CompareTag("Player"))
@@ -59,7 +65,15 @@ public class TooltipZone : MonoBehaviour
             Destroy(promptP1);
 			promptP1 = null;
 			hasP1Activated = !IsRepeatable;
-		}
+            if(dialogTrigger != null)
+            {
+                if (dialogTrigger.has_triggered == false)
+                {
+                    dialogTrigger.triggerDialogue();
+                    dialogTrigger.has_triggered = true;
+                }
+            }
+        }
 		if (ForP2 && (Input.GetButtonDown(ButtonPrompt + "P2") || Input.GetAxis(ButtonPrompt + "P2") != 0) && other.transform.name == "P2")
 		{
             is_trigger = true;
