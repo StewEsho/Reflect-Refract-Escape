@@ -401,41 +401,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
---- !u!1 &589049830 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1932013793458518, guid: 3a11ff1319855d045850371446f3d0ed,
-    type: 2}
-  m_PrefabInternal: {fileID: 698157895}
---- !u!114 &589049831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 589049830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences:
-    - The door is now opened.
-    images: []
-  sequence: 1
-  is_over: 0
-  has_triggered: 0
---- !u!114 &589049832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 589049830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be67d01594daceb4ba533391ec5fccb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &603146349
 Prefab:
   m_ObjectHideFlags: 0
@@ -741,6 +706,18 @@ Prefab:
         type: 2}
       propertyPath: ForP2
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
@@ -1724,6 +1701,18 @@ Prefab:
       propertyPath: ForP2
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
   m_IsPrefabAsset: 0
@@ -1794,41 +1783,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48b7a17aa2ce4694fbf799cd5d08a438, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1291486699 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1932013793458518, guid: 3a11ff1319855d045850371446f3d0ed,
-    type: 2}
-  m_PrefabInternal: {fileID: 1422306090}
---- !u!114 &1291486704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1291486699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be67d01594daceb4ba533391ec5fccb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1291486705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1291486699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences:
-    - The door is now opened.
-    images: []
-  sequence: 1
-  is_over: 0
-  has_triggered: 0
 --- !u!1001 &1336967580
 Prefab:
   m_ObjectHideFlags: 0
@@ -2103,6 +2057,18 @@ Prefab:
       propertyPath: ForP1
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
   m_IsPrefabAsset: 0
@@ -2184,6 +2150,18 @@ Prefab:
         type: 2}
       propertyPath: ForP1
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353317439179894, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
