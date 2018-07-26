@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour {
     public Animator anim;
     public bool is_over;
     private bool up;
+    private bool start_dialog = false;
     // Use this for initialization
     private void Start()
     {
@@ -29,12 +30,11 @@ public class DialogueManager : MonoBehaviour {
         anim.SetBool("Trigger", true);
         texts.Clear();
         images.Clear();
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject player in players)
+        start_dialog = true;
+        TooltipZone[] tooltipzones = FindObjectsOfType<TooltipZone>();
+        foreach (TooltipZone tooltipzone in tooltipzones)
         {
-            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-            player.GetComponent<PlaceObjects>().enabled = false;
-            player.GetComponent<PlayerMovement>().enabled = false;
+            tooltipzone.enabled = false;
         }
         foreach (string text in dialogue.sentences)
         {
@@ -70,7 +70,7 @@ public class DialogueManager : MonoBehaviour {
     }
     public void EndConversation()
     {
-
+        start_dialog = false;
         anim.SetBool("Trigger", false);
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
@@ -80,6 +80,23 @@ public class DialogueManager : MonoBehaviour {
         }
         is_over = true;
         GameObject[] dialogues = GameObject.FindGameObjectsWithTag("Dialogue");
-
+        TooltipZone[] tooltipzones = FindObjectsOfType<TooltipZone>();
+        foreach (TooltipZone tooltipzone in tooltipzones)
+        {
+            tooltipzone.enabled = true;
+        }
+    }
+    private void LateUpdate()
+    {
+        if (start_dialog)
+        {
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject player in players)
+            {
+                player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                player.GetComponent<PlaceObjects>().enabled = false;
+                player.GetComponent<PlayerMovement>().enabled = false;
+            }
+        }
     }
 }

@@ -381,6 +381,50 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17a5174cf791c0d45af3580a295de277, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &453509861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 453509863}
+  - component: {fileID: 453509862}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &453509862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453509861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677bbe53569fdef4a908409aa11ef336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayText: {fileID: 1057083375}
+  DisplayImage: {fileID: 1057083374}
+  anim: {fileID: 1057083373}
+  is_over: 0
+--- !u!4 &453509863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453509861}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.13050267, y: 0.2059839, z: -9.90625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &473544436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1453823979083576, guid: 8e7f7652a810a3d4d976ff0089b82fdf,
@@ -518,6 +562,8 @@ GameObject:
   - component: {fileID: 695397059}
   - component: {fileID: 695397058}
   - component: {fileID: 695397057}
+  - component: {fileID: 695397062}
+  - component: {fileID: 695397061}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -592,6 +638,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695397061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 695397056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de2211d9777b9c4f904df10af2e51fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &695397062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 695397056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - Hey dummy, do you know where animal should go if they lost their tail?
+    - Stop calling me that! I don't know. Where?
+    - The RETAIL store hahaha
+    - '.....and you call me a digital dummy.'
+    images:
+    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
+    - {fileID: 21300066, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
+    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
+    - {fileID: 21300066, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
+  sequence: 0
+  is_over: 0
+  has_triggered: 0
 --- !u!1 &778312346
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +962,23 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22c0dab142234be419fc346debc1a1c2, type: 2}
   m_IsPrefabAsset: 0
+--- !u!95 &1057083373 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95547955047842228, guid: 22c0dab142234be419fc346debc1a1c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1057083372}
+--- !u!114 &1057083374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114448829359321838, guid: 22c0dab142234be419fc346debc1a1c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1057083372}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1057083375 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114250713769610910, guid: 22c0dab142234be419fc346debc1a1c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1057083372}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1203448828
 Prefab:
   m_ObjectHideFlags: 0

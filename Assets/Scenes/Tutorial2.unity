@@ -345,6 +345,50 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17a5174cf791c0d45af3580a295de277, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &176448724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176448726}
+  - component: {fileID: 176448725}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &176448725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 176448724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677bbe53569fdef4a908409aa11ef336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayText: {fileID: 1157411352}
+  DisplayImage: {fileID: 1831859718}
+  anim: {fileID: 619951797}
+  is_over: 0
+--- !u!4 &176448726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 176448724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.13050267, y: 0.2059839, z: -9.90625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &201368186
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,9 +503,40 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1596968951128026, guid: fa7b34a447bfc374a978bbacbb908748, type: 2}
+      propertyPath: m_Name
+      value: ToolTipManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa7b34a447bfc374a978bbacbb908748, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &465597432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1925576168468128, guid: 1b0650ee8b4b7e34fb751a7067c94cf5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1145658602}
+--- !u!114 &465597434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 465597432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - Use the right joystick to move the mirror around you.
+    - And press A to place it.
+    images:
+    - {fileID: 21300000, guid: 6a6370f62e8c4cb4aacd77b42e580c42, type: 3}
+    - {fileID: 21300000, guid: 70de0004fdb4af4409a97ba20c3433c7, type: 3}
+  sequence: 0
+  is_over: 0
+  has_triggered: 0
 --- !u!4 &465741951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4668750305516312, guid: fa7b34a447bfc374a978bbacbb908748,
@@ -560,6 +635,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e3a8252cd76d204d822e9aa7f9ea0bd, type: 2}
   m_IsPrefabAsset: 0
+--- !u!95 &619951797 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95547955047842228, guid: 22c0dab142234be419fc346debc1a1c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1019522380}
 --- !u!1 &695397056
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +651,8 @@ GameObject:
   - component: {fileID: 695397059}
   - component: {fileID: 695397058}
   - component: {fileID: 695397057}
+  - component: {fileID: 695397062}
+  - component: {fileID: 695397061}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -645,6 +727,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695397061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 695397056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de2211d9777b9c4f904df10af2e51fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &695397062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 695397056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - Ah, it's another one of those.
+    - It seems like we have to put the mirror outside the doors. Can you do that?
+    - I'll give it a try!
+    - Press X to toggle place mode.
+    images:
+    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
+    - {fileID: 21300066, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
+    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
+    - {fileID: 21300000, guid: 85e7c8d542a6352428d9ec87d08eebaf, type: 3}
+  sequence: 0
+  is_over: 0
+  has_triggered: 0
 --- !u!1001 &1019522380
 Prefab:
   m_ObjectHideFlags: 0
@@ -817,6 +936,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b0650ee8b4b7e34fb751a7067c94cf5, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1157411352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114250713769610910, guid: 22c0dab142234be419fc346debc1a1c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1019522380}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1203448828
 Prefab:
   m_ObjectHideFlags: 0
@@ -1727,6 +1852,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1acd602c27ee4da42aafe9b3c3e3b934, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1831859718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114448829359321838, guid: 22c0dab142234be419fc346debc1a1c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1019522380}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1835717580
 GameObject:
   m_ObjectHideFlags: 0

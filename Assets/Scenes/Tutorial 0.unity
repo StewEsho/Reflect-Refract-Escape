@@ -1004,11 +1004,16 @@ Prefab:
     - target: {fileID: 114982867033827596, guid: 4e3a8252cd76d204d822e9aa7f9ea0bd,
         type: 2}
       propertyPath: IsDelayed
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114982867033827596, guid: 4e3a8252cd76d204d822e9aa7f9ea0bd,
         type: 2}
       propertyPath: active_light
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114982867033827596, guid: 4e3a8252cd76d204d822e9aa7f9ea0bd,
+        type: 2}
+      propertyPath: IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1096,6 +1101,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 9805ff13d43bb5f41a6b59c28d5685c3, type: 3}
   sequence: 0
   is_over: 0
+  has_triggered: 0
 --- !u!114 &1009336850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2448,6 +2454,7 @@ MonoBehaviour:
     - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
   sequence: 0
   is_over: 0
+  has_triggered: 0
 --- !u!1001 &1726129170
 Prefab:
   m_ObjectHideFlags: 0
