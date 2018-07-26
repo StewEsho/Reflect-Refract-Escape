@@ -12,7 +12,7 @@ public class BeamEmitter : MonoBehaviour
     public static Vector2 beamAStart, beamAEnd, beamBStart, beamBEnd;
     public GameObject lightray;
     public bool IsDelayed = false;
-    public bool active_light;
+    public bool IsActive = true;
     [Range(1, 12)] public int numOfBeams = 7;
     private List<GameObject> castLightrays = new List<GameObject>();
     protected bool isWon;
@@ -46,21 +46,21 @@ public class BeamEmitter : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (active_light)
+        if (IsActive)
         {
             foreach (var ray in castLightrays)
             {
                 ray.SetActive(true);
             }
         }
-        else if (!active_light)
+        else if (!IsActive)
         {
             foreach (var ray in castLightrays)
             {
                 ray.SetActive(false);
             }
         }
-        if (active_light)
+        if (IsActive)
         {
             if (!IsDelayed)
             {

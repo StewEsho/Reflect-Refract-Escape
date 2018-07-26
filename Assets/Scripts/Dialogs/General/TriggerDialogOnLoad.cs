@@ -13,7 +13,7 @@ public class TriggerDialogOnLoad : MonoBehaviour {
     {
         if (GetComponent<DialogTrigger>().is_over)
         {
-            FindObjectOfType<BeamEmitter>().active_light = true;
+            FindObjectOfType<BeamEmitter>().IsActive = true;
         }
     }
 }
