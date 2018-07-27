@@ -877,6 +877,31 @@ Prefab:
       propertyPath: ControlledItems.Array.data[0]
       value: 
       objectReference: {fileID: 1671315108}
+    - target: {fileID: 212617446667244446, guid: 3a11ff1319855d045850371446f3d0ed,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.4811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 212617446667244446, guid: 3a11ff1319855d045850371446f3d0ed,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212617446667244446, guid: 3a11ff1319855d045850371446f3d0ed,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.08113222
+      objectReference: {fileID: 0}
+    - target: {fileID: 108969662978608088, guid: 3a11ff1319855d045850371446f3d0ed,
+        type: 2}
+      propertyPath: m_SpotAngle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 108969662978608088, guid: 3a11ff1319855d045850371446f3d0ed,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a11ff1319855d045850371446f3d0ed, type: 2}
   m_IsPrefabAsset: 0
