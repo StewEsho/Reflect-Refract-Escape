@@ -25,7 +25,7 @@ public class ToolTipManager : MonoBehaviour {
         foreach (Transform child in childs)
         {
             TooltipZone TooltipScript = child.gameObject.GetComponent<TooltipZone>();
-            if (TooltipScript.is_trigger)
+            if (TooltipScript.hasBeenTriggered)
             {
                 foreach (GameObject active_item in TooltipScript.active_items)
                 {

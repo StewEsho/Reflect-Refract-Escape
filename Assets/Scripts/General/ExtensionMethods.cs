@@ -33,6 +33,11 @@ public static class ExtensionMethods
     {
         return new Vector3(vector.x + offset, vector.y, vector.z);
     }
+    
+    public static Vector3 addZ(this Vector3 vector, float offset)
+    {
+        return new Vector3(vector.x, vector.y, vector.z + offset);
+    }
 
     public static Vector2 SetY(this Vector2 vector, float newValue)
     {
@@ -52,6 +57,11 @@ public static class ExtensionMethods
     public static Vector3 SetX(this Vector3 vector, float newValue)
     {
         return new Vector3(newValue, vector.y, vector.z);
+    }
+    
+    public static Vector3 SetZ(this Vector3 vector, float newValue)
+    {
+        return new Vector3(vector.x, vector.y, newValue);
     }
 
     public static T Pop<T>(this List<T> list)

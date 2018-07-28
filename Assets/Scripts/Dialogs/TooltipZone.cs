@@ -4,8 +4,9 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Collider2D))]
 public class TooltipZone : MonoBehaviour
 {
-	public GameObject Tooltip;
-    public bool is_trigger;
+	public GameObject Tooltip; //todo: procedurally create such an object.
+	[HideInInspector]
+    public bool hasBeenTriggered = false;
 	[Header("Button Settings")]
 	[Tooltip("Button to be pressed to dismiss the prompt for the player.")]
 	public string ButtonPrompt;
@@ -61,7 +62,7 @@ public class TooltipZone : MonoBehaviour
 		//TODO: tell stew to be a better fuckin programmer this is a disgrace. stop being lazy and use a size 2 tuple
 		if (ForP1 && (Input.GetButtonDown(ButtonPrompt + "P1") || Input.GetAxis(ButtonPrompt + "P1") != 0) && other.transform.name == "P1")
 		{
-            is_trigger = true;
+            hasBeenTriggered = true;
             Destroy(promptP1);
 			promptP1 = null;
 			hasP1Activated = !IsRepeatable;
@@ -76,7 +77,7 @@ public class TooltipZone : MonoBehaviour
         }
 		if (ForP2 && (Input.GetButtonDown(ButtonPrompt + "P2") || Input.GetAxis(ButtonPrompt + "P2") != 0) && other.transform.name == "P2")
 		{
-            is_trigger = true;
+            hasBeenTriggered = true;
             Destroy(promptP2);
 			promptP2 = null;
 			hasP2Activated = !IsRepeatable;
@@ -93,7 +94,7 @@ public class TooltipZone : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
-        is_trigger = true;
+        hasBeenTriggered = false;
         if (other.transform.CompareTag("Player") && numOfPlayersInside <= 1)
 		{
 			if (ForP1 && other.transform.name == "P1") //duplicate code >:(
