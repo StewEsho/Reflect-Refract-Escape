@@ -880,17 +880,17 @@ Prefab:
     - target: {fileID: 212617446667244446, guid: 3a11ff1319855d045850371446f3d0ed,
         type: 2}
       propertyPath: m_Color.r
-      value: 0.4811321
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212617446667244446, guid: 3a11ff1319855d045850371446f3d0ed,
         type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.61960787
       objectReference: {fileID: 0}
     - target: {fileID: 212617446667244446, guid: 3a11ff1319855d045850371446f3d0ed,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.08113222
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108969662978608088, guid: 3a11ff1319855d045850371446f3d0ed,
         type: 2}
@@ -2304,11 +2304,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4302005575243662, guid: 8e7f7652a810a3d4d976ff0089b82fdf, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.17
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4302005575243662, guid: 8e7f7652a810a3d4d976ff0089b82fdf, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.45
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4302005575243662, guid: 8e7f7652a810a3d4d976ff0089b82fdf, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2337,7 +2337,7 @@ Prefab:
     - target: {fileID: 212692547862953942, guid: 8e7f7652a810a3d4d976ff0089b82fdf,
         type: 2}
       propertyPath: m_Size.y
-      value: 2.9276235
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 61257648553613770, guid: 8e7f7652a810a3d4d976ff0089b82fdf,
         type: 2}

@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212692547862953942}
   - component: {fileID: 95282318705383150}
   - component: {fileID: 114321868853186602}
-  - component: {fileID: 60355879145761394}
-  m_Layer: 0
+  - component: {fileID: 61627907715463622}
+  m_Layer: 8
   m_Name: Door 1
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -37,14 +37,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1453823979083576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.997, y: 0.5, z: 0}
+  m_LocalPosition: {x: 3.8365064, y: -0.9376227, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60355879145761394
-PolygonCollider2D:
+--- !u!61 &61627907715463622
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -59,22 +59,15 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7, y: 0.7}
-    newSize: {x: 0.6, y: 2}
-    adaptiveTilingThreshold: 0.559
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.35
     drawMode: 2
     adaptiveTiling: 1
   m_AutoTiling: 1
-  m_Points:
-    m_Paths:
-    - - {x: -0.32, y: 0.35}
-      - {x: -0.35, y: 0.32}
-      - {x: -0.35, y: -0.32}
-      - {x: -0.32, y: -0.35}
-      - {x: 0.32, y: -0.35}
-      - {x: 0.35, y: -0.32}
-      - {x: 0.35, y: 0.32}
-      - {x: 0.32, y: 0.35}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!95 &95282318705383150
 Animator:
   serializedVersion: 3
@@ -139,13 +132,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Sprite: {fileID: 21300136, guid: d46930b13ba59db46b337ae1d585376a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c0e9f5c3aacf3ad4fb5ba3a2f3f69020, type: 3}
+  m_Color: {r: 1, g: 0.61737454, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 0.6, y: 2}
-  m_AdaptiveModeThreshold: 0.559
+  m_Size: {x: 1, y: 2}
+  m_AdaptiveModeThreshold: 0.35
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0

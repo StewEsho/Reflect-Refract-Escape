@@ -14,11 +14,11 @@ public class PlaceObjects : MonoBehaviour
 
 
     //Controller Constants
-    public string ROTATION_AXIS;
-    public string POSITIONING_AXIS;
-    public string MAIN_BUTTON;
-    public string DELETE_BUTTON;
-    public string ALT_BUTTON;
+    private string ROTATION_AXIS;
+    private string POSITIONING_AXIS;
+    private string MAIN_BUTTON;
+    private string DELETE_BUTTON;
+    private string ALT_BUTTON;
 
     [SerializeField] private string id; //"P1" or "P2"
 
@@ -36,7 +36,7 @@ public class PlaceObjects : MonoBehaviour
 
     private GameObject preparedFactoryObject; //object that will be spawned from a factory.
     private Vector3 preparedFactoryPosition;
-    public bool preparedToSpawn;
+    private bool preparedToSpawn;
 
     private GameObject carryInRange, carry; //object in range to be carried, and object that is actually being carried.
     private Vector2 ghostPlacementDir;
@@ -56,6 +56,7 @@ public class PlaceObjects : MonoBehaviour
         MAIN_BUTTON = "A_" + id;
         DELETE_BUTTON = "B_" + id;
         ALT_BUTTON = "X_" + id;
+        Debug.Log(MAIN_BUTTON);
         placementStack = new List<GameObject>();
 //        ghosts = new List<GameObject>();
 //        selector = transform.Find("Selector").Find("Item").GetComponent<SpriteRenderer>();
