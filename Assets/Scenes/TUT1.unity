@@ -186,10 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cb3be1085b25b46bd100f5831afd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  one_star: 0
-  two_star: 0
-  three_star: 0
-  UIpanel: {fileID: 0}
+  mirrorLimit: 0
 --- !u!4 &478680611
 Transform:
   m_ObjectHideFlags: 0
@@ -8469,11 +8466,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4963306886219460, guid: 194a78980a179aa4f8cc5a649f0e33ac, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.5
+      value: 6.48
       objectReference: {fileID: 0}
     - target: {fileID: 4963306886219460, guid: 194a78980a179aa4f8cc5a649f0e33ac, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -1.52
       objectReference: {fileID: 0}
     - target: {fileID: 4963306886219460, guid: 194a78980a179aa4f8cc5a649f0e33ac, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8694,10 +8691,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1585634855822888, guid: 22c0dab142234be419fc346debc1a1c2, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22c0dab142234be419fc346debc1a1c2, type: 2}
