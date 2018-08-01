@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private GameObject[] exitObjects;
     [SerializeField]
     private int mirrorLimit = -1;
+    
     private bool areOpticsLimited = false;
     private int mirrorAmount = 0;
 
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     {
         ui = GameObject.Find("/Canvas").GetComponent<UIManager>();
         exitObjects = GameObject.FindGameObjectsWithTag("exit");
+        Debug.Log("Mirror Limit: " + mirrorLimit);
         if (mirrorLimit >= 1)
         {
             ui.EnableOpticCount(mirrorLimit);

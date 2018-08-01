@@ -29,8 +29,7 @@ public class Mirror : MonoBehaviour, IOptic
      */
     public Vector2 Refract(Vector2 hit, Vector2 incidenceDir, Vector2 normal)
     {
-        float crossSign = 0;
-        crossSign = Mathf.Sign(Vector3.Cross(normal, incidenceDir).z);
+        float crossSign = Mathf.Sign(Vector3.Cross(normal, incidenceDir).z);
         angle = (Mathf.PI) -
                 Mathf.Acos(Vector2.Dot(normal, incidenceDir) / (normal.magnitude * incidenceDir.magnitude));
         angle *= crossSign;

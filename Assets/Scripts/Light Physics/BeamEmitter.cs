@@ -60,6 +60,7 @@ public class BeamEmitter : MonoBehaviour
                 ray.SetActive(false);
             }
         }
+
         if (IsActive)
         {
             if (!IsDelayed)
@@ -73,10 +74,8 @@ public class BeamEmitter : MonoBehaviour
                 StartCoroutine(Pause());
             }
         }
+
         //TODO: Optimize the code after finishing up the entire system.
-
-
-
     }
 
     public List<Vector2> CalculateLightPoints(Vector2 origin, Vector2 dir)
@@ -87,7 +86,7 @@ public class BeamEmitter : MonoBehaviour
 
         if (hit.collider == null) return hitpoints;
 
-        
+
         IOptic optic = hit.collider.gameObject.GetComponent<IOptic>();
         if (optic != null)
             if (hit.collider.transform.CompareTag("Ghost"))
@@ -100,8 +99,26 @@ public class BeamEmitter : MonoBehaviour
             }
             else
             {
-                hitpoints.AddRange(CalculateLightPoints(hit.point + 0.01f * hit.normal,
-                    optic.Refract(hit.point, dir, hit.normal)));
+                if (optic is Lens)
+                {
+                    var newDir = optic.Refract(hit.point, dir, hit.normal);
+                    var newHit = Physics2D.Raycast(hitpoint - 0.01f * hit.normal,
+                        newDir, 1);
+                    if (newHit.collider == null)
+                    {
+                        hitpoints.AddRange(CalculateLightPoints(newHit.point - 0.01f * hit.normal, newDir));
+                    }
+                    else
+                    {
+                        hitpoints.AddRange(CalculateLightPoints(hit.point - 0.01f * hit.normal,
+                            optic.Refract(hit.point, dir, hit.normal)));
+                    }
+                }
+                else if (optic is Mirror)
+                {
+                    hitpoints.AddRange(CalculateLightPoints(hit.point + 0.01f * hit.normal,
+                        optic.Refract(hit.point, dir, hit.normal)));
+                }
             }
 
         var switchBttn = hit.collider.gameObject.GetComponent<Switch>();
@@ -151,11 +168,13 @@ public class BeamEmitter : MonoBehaviour
         {
             ray.SetActive(false);
         }
+
         yield return new WaitForSeconds(5);
         foreach (var ray in castLightrays)
         {
             ray.SetActive(true);
         }
+
         IsDelayed = false;
     }
 }
