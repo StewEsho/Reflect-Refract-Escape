@@ -19,7 +19,7 @@ public class OpticFactory : MonoBehaviour
 		StartCoroutine(CheckIfEnabled());
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerStay2D(Collider2D other)
 	{
 		if (isEnabled && other.transform.CompareTag("Player"))
 		{
