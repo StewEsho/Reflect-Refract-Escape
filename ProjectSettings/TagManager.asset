@@ -14,6 +14,7 @@ TagManager:
   - Dialogue
   - BeamEmitter
   - Ghost
+  - portal
   layers:
   - Default
   - TransparentFX

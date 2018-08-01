@@ -576,8 +576,6 @@ GameObject:
   - component: {fileID: 1004387989}
   - component: {fileID: 1004387988}
   - component: {fileID: 1004387987}
-  - component: {fileID: 1004387992}
-  - component: {fileID: 1004387991}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -652,39 +650,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1004387991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1004387986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Intro
-    sentences:
-    - Hey, I can see there is a switch there. But wherer is the light source?
-    - You digital dummy we are blocking it! Move out of the way!
-    images:
-    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-    - {fileID: 21300066, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-  sequence: 0
-  is_over: 0
-  has_triggered: 0
---- !u!114 &1004387992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1004387986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de2211d9777b9c4f904df10af2e51fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1041706480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,6 +2660,66 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1843287617
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673364701387316, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
+      propertyPath: m_Name
+      value: levelSelector (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114769964813154280, guid: e262519a9e5812f46bbf2fc84d2ef2ef,
+        type: 2}
+      propertyPath: level_to_load
+      value: Sandbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673364701387316, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102290952059074816, guid: e262519a9e5812f46bbf2fc84d2ef2ef,
+        type: 2}
+      propertyPath: m_Text
+      value: Sandbox
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1865837192
 Prefab:
   m_ObjectHideFlags: 0

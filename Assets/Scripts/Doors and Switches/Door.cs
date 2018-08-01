@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Door : MonoBehaviour
 {
-
 	private bool isOpen = false;
 	private Animator animator;
 
@@ -14,9 +13,8 @@ public class Door : MonoBehaviour
 	{
 		animator = GetComponent<Animator>();
 	}
-
-	// Close the door if open, and open the door if closed
-	public void Toggle()
+    // Close the door if open, and open the door if closed
+    public void Toggle()
 	{
 		isOpen = !isOpen;
 		animator.SetBool("isOpen", isOpen);
@@ -25,7 +23,7 @@ public class Door : MonoBehaviour
 	//Specify whether to open or close the door
 	public void SetDoorState(bool open)
 	{
-		if (isOpen != open)
+		if (isOpen != open )
 		{
 			isOpen = open;
 			animator.SetBool("isOpen", isOpen);
