@@ -70,47 +70,44 @@ public class PlaceObjects : MonoBehaviour
     {
         if (state == State.Carrying)
         {
-            if (state == State.Carrying)
+            try
             {
-                try
+                if (carry != null)
                 {
-                    if (carry != null)
+                    //position object around player
+                    if (canPositionObject && Mathf.Abs(Input.GetAxis(POSITIONING_AXIS)) > 0.1f)
                     {
-                        //position object around player
-                        if (canPositionObject && Mathf.Abs(Input.GetAxis(POSITIONING_AXIS)) > 0.1f)
-                        {
-                            StartCoroutine(PositionObject(carry.transform));
-                        }
+                        StartCoroutine(PositionObject(carry.transform));
+                    }
 
-                        //rotate object
-                        if (canRotateObject && Mathf.Abs(Input.GetAxis(ROTATION_AXIS)) > 0.1f)
-                        {
-                            StartCoroutine(RotateObjects(carry.transform));
-                        }
+                    //rotate object
+                    if (canRotateObject && Mathf.Abs(Input.GetAxis(ROTATION_AXIS)) > 0.1f)
+                    {
+                        StartCoroutine(RotateObjects(carry.transform));
+                    }
 
-                        //Press A to place down object being carried.
-                        if (Input.GetButtonDown(MAIN_BUTTON))
-                        {
-                            carry.transform.SetParent(null);
-                            carry = null; //By setting the reference to null, the object will no longer move around and thus be "placed".
-                            state = State.Standard;
-                            //TODO: enable carryable on object
-                        }
+                    //Press A to place down object being carried.
+                    if (Input.GetButtonDown(MAIN_BUTTON))
+                    {
+                        carry.transform.SetParent(null);
+                        carry = null; //By setting the reference to null, the object will no longer move around and thus be "placed".
+                        state = State.Standard;
+                        //TODO: enable carryable on object
+                    }
 
-                        //Press B to delete the object being carried.
-                        if (Input.GetButtonDown(DELETE_BUTTON))
-                        {
-                            Destroy(carry);
-                            carry = null;
-                            state = State.Standard;
-                            //TODO: reduce mirror placed count (or not to make things more challenging maybe). Just take care of it.
-                        }
+                    //Press B to delete the object being carried.
+                    if (Input.GetButtonDown(DELETE_BUTTON))
+                    {
+                        Destroy(carry);
+                        carry = null;
+                        state = State.Standard;
+                        //TODO: reduce mirror placed count (or not to make things more challenging maybe). Just take care of it.
                     }
                 }
-                catch (NullReferenceException e)
-                {
-                    Debug.LogException(e, this);
-                }
+            }
+            catch (NullReferenceException e)
+            {
+                Debug.LogException(e, this);
             }
         }
         else if (state == State.Standard) //Not placing nor carrying an object
@@ -126,6 +123,8 @@ public class PlaceObjects : MonoBehaviour
                     SpawnNewOptic();
                 }
             }
+            
+            Debug.Log(preparedToSpawn);
         }
     }
 
@@ -201,6 +200,12 @@ public class PlaceObjects : MonoBehaviour
         this.preparedToSpawn = true;
         this.preparedFactoryObject = optic;
         this.preparedFactoryPosition = position;
+    }
+    
+    public void UnprepareForSpawning() //called when exiting an optic factory
+    {
+        this.preparedToSpawn = false;
+        this.preparedFactoryObject = null;
     }
 
     public void SpawnNewOptic()

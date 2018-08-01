@@ -19,15 +19,21 @@ public class OpticFactory : MonoBehaviour
 		StartCoroutine(CheckIfEnabled());
 	}
 
-	void OnTriggerStay2D(Collider2D other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (isEnabled && other.transform.CompareTag("Player"))
 		{
 			PlaceObjects po = other.gameObject.GetComponent<PlaceObjects>(); //access PlaceObjects script
-			if (po.GetState() == "Standard")
-			{
-				po.PrepareForSpawning(Optic, transform.parent.position);
-			}
+			po.PrepareForSpawning(Optic, transform.parent.position);
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.transform.CompareTag("Player"))
+		{
+			PlaceObjects po = other.gameObject.GetComponent<PlaceObjects>(); //access PlaceObjects script
+			po.UnprepareForSpawning();
 		}
 	}
 
