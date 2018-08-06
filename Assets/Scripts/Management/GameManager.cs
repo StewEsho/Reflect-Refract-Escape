@@ -34,6 +34,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetButtonUp("StartButton_P1") || Input.GetButtonUp("StartButton_P2"))
+        {
+            if (GameObject.Find("PauseMenu").GetComponent<Animator>().GetBool("IsTrigger"))
+            {
+                CancelRestart();
+            }
+            else
+            {
+                GameObject.Find("PauseMenu").GetComponent<Animator>().SetBool("IsTrigger", true);
+            }
+           
+        }
         gameWon = true;
         if (areOpticsLimited)
             StartCoroutine(CountMirrors());
@@ -90,5 +102,14 @@ public class GameManager : MonoBehaviour
         mirrorAmount = mirrors.Length;
         ui.SetOpticCount(mirrorLimit - mirrorAmount);
         yield return new WaitForSeconds(.1f);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void CancelRestart()
+    {
+        GameObject.Find("PauseMenu").GetComponent<Animator>().SetBool("IsTrigger", false);
     }
 }
