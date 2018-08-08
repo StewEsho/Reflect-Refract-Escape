@@ -46,6 +46,18 @@ public class BeamEmitter : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        //basically copy the same code from start(), 
+        //if we want the light source to be carryable we have to recalculate the starting position as well as the light direction for every frame.
+        beamDirection = -transform.right;
+        for (var i = 0; i < numOfBeams; i++)
+        {
+            var spacing = (float)(i - numOfBeams / 2) / 10;
+            var xSpace = spacing * Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad);
+            var ySpace = spacing * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
+            beamOrigins[i] = transform.position.V2().addX(xSpace).addY(ySpace);
+            castLightrays[i].GetComponent<LineRenderer>().SetPosition(0, beamOrigins[i]);
+            castLightrays[i].transform.position = beamOrigins[i];
+        }
         if (IsActive)
         {
             foreach (var ray in castLightrays)

@@ -227,7 +227,7 @@ public class PlaceObjects : MonoBehaviour
         float zRotation = Mathf.Sign(-Input.GetAxis(ROTATION_AXIS)) * 15;
         t.transform.Rotate(0, 0, zRotation);
         canRotateObject = false;
-        yield return new WaitForSeconds(0.06f);
+        yield return new WaitForSeconds(0.2f);
         canRotateObject = true;
     }
 
