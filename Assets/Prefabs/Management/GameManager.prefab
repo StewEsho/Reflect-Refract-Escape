@@ -51,4 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cb3be1085b25b46bd100f5831afd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirrorLimit: 0
+  mirrorLimit: 1
