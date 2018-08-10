@@ -8,10 +8,8 @@ public class PlaceObjects : MonoBehaviour
     enum State
     {
         Standard,
-        PlaceMode,
         Carrying
     };
-
 
     //Controller Constants
     private string ROTATION_AXIS;
@@ -21,9 +19,6 @@ public class PlaceObjects : MonoBehaviour
     private string ALT_BUTTON;
 
     [SerializeField] private string id; //"P1" or "P2"
-
-//    [SerializeField] private List<PlaceableItem> objects; // list of all placable placableObjects
-//    private List<GameObject> ghosts; //list of ghosts (NOT serializable)
     [SerializeField] private float rotationSpeed = 50;
     [SerializeField] private float ghostDistance = 1.25f;
     [SerializeField] private float controllerDeadzone = 0.19f;
@@ -40,14 +35,10 @@ public class PlaceObjects : MonoBehaviour
 
     private GameObject carryInRange, carry; //object in range to be carried, and object that is actually being carried.
     private Vector2 ghostPlacementDir;
+    private Flashlight flashlight;
     private bool canRotateObject = true; //used to time rotation
     private bool canPositionObject = true; //used to time positioning
     private bool toggle = false;
-
-    //UI for selecting and placing items
-//    private SpriteRenderer selector; //TODO: move this ui and tooltips to a seperate PlayerUI Script
-
-//    private Transform ghostPositioner; //a positioner which is moved and rotated, while the selected ghost matches its transform.
 
     void Start()
     {
@@ -58,12 +49,6 @@ public class PlaceObjects : MonoBehaviour
         ALT_BUTTON = "X_" + id;
         Debug.Log(MAIN_BUTTON);
         placementStack = new List<GameObject>();
-//        ghosts = new List<GameObject>();
-//        selector = transform.Find("Selector").Find("Item").GetComponent<SpriteRenderer>();
-//        selector.sprite = objects[objectIndex].thumbnail;
-//        ghostPositioner = transform.Find("Ghost Positioner");
-//        RestrictObjects(); //restricts the objects used for this level
-//        CreateGhosts(); //instansiates ghosts for this level
     }
 
     void Update()
@@ -89,15 +74,26 @@ public class PlaceObjects : MonoBehaviour
                     //Press A to place down object being carried.
                     if (Input.GetButtonDown(MAIN_BUTTON))
                     {
-                        carry.transform.SetParent(null);
-                        carry = null; //By setting the reference to null, the object will no longer move around and thus be "placed".
-                        state = State.Standard;
-                        //TODO: enable carryable on object
+                        if (flashlight != null)
+                        {
+                            flashlight.ToggleFlashlight();
+                        }
+                        else
+                        {
+                            carry.transform.SetParent(null);
+                            carry = null; //By setting the reference to null, the object will no longer move around and thus be "placed".
+                            state = State.Standard;
+                        }
                     }
 
                     //Press B to delete the object being carried.
                     if (Input.GetButtonDown(DELETE_BUTTON))
                     {
+                        if (flashlight != null)
+                        {
+                            Destroy(flashlight);
+                            flashlight = null;
+                        }
                         Destroy(carry);
                         carry = null;
                         state = State.Standard;
@@ -128,61 +124,17 @@ public class PlaceObjects : MonoBehaviour
         }
     }
 
-//    public void RestrictObjects()
-//    {
-//        GameObject r = GameObject.Find("/LevelItemRestrictor");
-//        if (r != null)
-//        {
-//            //Iterate through the list of whitelisted items and set this player's objects to that list.
-//            //I know its not the most efficent method but idgaf
-//            objects = new List<PlaceableItem>();
-//            LevelItemRestrictor restictor = r.GetComponent<LevelItemRestrictor>();
-//            foreach (PlaceableItem obj in restictor.GetLevelItems())
-//            {
-//                objects.Add(obj);
-//            }
-//        }
-//    }
-
-//    public void CreateGhosts()
-//    {
-//        //first, align the ghost positioner properly;
-//        ghostPositioner.localPosition = Vector2.left * ghostDistance;
-//        ghostPositioner.rotation = Quaternion.identity;
-//        foreach (PlaceableItem obj in objects)
-//        {
-//            //Instansiate ghost as child
-//            GameObject ghost = Instantiate(obj.gameObject, ghostPositioner.position, ghostPositioner.rotation,
-//                transform);
-//            //Add GhostOptic script, which will continue the process of instansiating the ghost
-//            ghost.AddComponent<GhostOptic>();
-//            //Add ghost to list of ghosts;
-//            ghosts.Add(ghost);
-//        }
-//    }
-//
-//    public void ClearGhosts()
-//    {
-//        //TODO: Implement PlaceObjects.ClearGhosts()
-//    }
-//
-//    public void SelectNewObject(int index)
-//    {
-//        //disable the old ghost
-//        ghosts[objectIndex].SetActive(false);
-//        //set index for new object, enable new ghost, change thumbnail accordingly.
-//        objectIndex = (int) Mathf.Repeat(index, ghosts.Count);
-//        ghosts[objectIndex].SetActive(true);
-//        selector.sprite = objects[objectIndex].thumbnail;
-//    }
-
     public void PickUpObject()
     {
         carry = carryInRange;
         state = State.Carrying;
         carry.transform.SetParent(transform, true); //parent the object;
         carryInRange = null;
-        //TODO: disable carryable from object (ehh)
+        flashlight = carry.GetComponent<Flashlight>();
+        if (flashlight != null)
+        {
+            carry.transform.localPosition = carry.transform.localPosition.normalized * 0.6f;
+        }
     }
 
     public void AddCarryInRange(GameObject go)
