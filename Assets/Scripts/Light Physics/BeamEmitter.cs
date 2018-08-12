@@ -94,7 +94,7 @@ public class BeamEmitter : MonoBehaviour
         }
     }
 
-    protected List<Vector2> CalculateLightPoints(Vector2 origin, Vector2 dir)
+    protected List<Vector2> CalculateLightPoints(Vector2 origin, Vector2 dir, GameObject ray)
     {
         var hit = Physics2D.Raycast(origin, dir, 30);
         var hitpoints = new List<Vector2>();
@@ -108,7 +108,7 @@ public class BeamEmitter : MonoBehaviour
             if (hit.collider.transform.CompareTag("Ghost"))
             {
                 //this object was a ghost, so continue to fire the light while rendering a ghost light
-                hitpoints.AddRange(CalculateLightPoints(hit.point - 0.01f * hit.normal, dir));
+                hitpoints.AddRange(CalculateLightPoints(hit.point - 0.01f * hit.normal, dir, ray));
                 var ghostHit = Physics2D.Raycast(hit.point, optic.Refract(hit.point, dir, hit.normal), 30);
 //                hit.collider.gameObject.GetComponent<LineRenderer>().SetPositions(new Vector3[] {hit.point, ghostHit.point});
                 Debug.DrawLine(hit.point, ghostHit.point, Color.yellow);
@@ -122,23 +122,26 @@ public class BeamEmitter : MonoBehaviour
                         newDir, 1);
                     if (newHit.collider == null)
                     {
-                        hitpoints.AddRange(CalculateLightPoints(newHit.point - 0.01f * hit.normal, newDir));
+                        hitpoints.AddRange(CalculateLightPoints(newHit.point - 0.01f * hit.normal, newDir, ray));
                     }
                     else
                     {
                         hitpoints.AddRange(CalculateLightPoints(hit.point - 0.01f * hit.normal,
-                            optic.Refract(hit.point, dir, hit.normal)));
+                            optic.Refract(hit.point, dir, hit.normal), ray));
                     }
                 }
                 else if (optic is Mirror)
                 {
                     hitpoints.AddRange(CalculateLightPoints(hit.point + 0.01f * hit.normal,
-                        optic.Refract(hit.point, dir, hit.normal)));
+                        optic.Refract(hit.point, dir, hit.normal), ray));
                 }
             }
 
         var switchBttn = hit.collider.gameObject.GetComponent<Switch>();
         if (switchBttn != null && gameObject.name != "Ghost") switchBttn.Activate();
+
+        var FocusswitchBttn = hit.collider.gameObject.GetComponent<FocusSwitch>();
+        if (FocusswitchBttn != null && gameObject.name != "Ghost") FocusswitchBttn.Activate(ray);
 
         return hitpoints;
     }
@@ -147,7 +150,7 @@ public class BeamEmitter : MonoBehaviour
     {
         foreach (var ray in castLightrays)
         {
-            var points = CalculateLightPoints(ray.transform.position, dir);
+            var points = CalculateLightPoints(ray.transform.position, dir, ray);
             RenderLight(points, ray.GetComponent<LineRenderer>());
         }
     }
