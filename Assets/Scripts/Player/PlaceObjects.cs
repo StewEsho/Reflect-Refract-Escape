@@ -65,6 +65,10 @@ public class PlaceObjects : MonoBehaviour
                         StartCoroutine(PositionObject(carry.transform));
                     }
 
+                    Vector2 dir = new Vector2(Input.GetAxis("RightJoystickX_" + id), -Input.GetAxis("RightJoystickY_" + id));
+                    if (dir.sqrMagnitude > controllerDeadzone)
+                        carry.transform.localPosition = dir.normalized * ghostDistance;
+
                     //rotate object
                     if (canRotateObject && Mathf.Abs(Input.GetAxis(ROTATION_AXIS)) > 0.1f)
                     {

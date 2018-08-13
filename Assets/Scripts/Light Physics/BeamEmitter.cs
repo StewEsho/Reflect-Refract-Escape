@@ -35,6 +35,7 @@ public class BeamEmitter : MonoBehaviour
             var spacing = (float) (i - NumberOfBeams / 2) / 10;
             var xSpace = spacing * Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad);
             var ySpace = spacing * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
+
             beamOrigins[i] = transform.position.V2().addX(xSpace).addY(ySpace);
             var newLight = Instantiate(Lightray, beamOrigins[i], Quaternion.identity, transform);
             newLight.GetComponent<LineRenderer>().SetPosition(0, beamOrigins[i]);
@@ -56,6 +57,8 @@ public class BeamEmitter : MonoBehaviour
             var spacing = (float)(i - NumberOfBeams / 2) / 10;
             var xSpace = spacing * Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad);
             var ySpace = spacing * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
+            Debug.Log(xSpace);
+            Debug.Log(ySpace);
             beamOrigins[i] = transform.position.V2().addX(xSpace).addY(ySpace);
             castLightrays[i].GetComponent<LineRenderer>().SetPosition(0, beamOrigins[i]);
             castLightrays[i].transform.position = beamOrigins[i];
