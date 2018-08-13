@@ -36,6 +36,7 @@ public class BeamEmitter : MonoBehaviour
             var spacing = (float) (i - NumberOfBeams / 2) / 10;
             var xSpace = spacing * Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad);
             var ySpace = spacing * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
+
             beamOrigins[i] = transform.position.V2().addX(xSpace).addY(ySpace);
             var newLight = Instantiate(Lightray, beamOrigins[i], Quaternion.identity, transform);
             newLight.GetComponent<LineRenderer>().SetPosition(0, beamOrigins[i]);
@@ -95,11 +96,10 @@ public class BeamEmitter : MonoBehaviour
         var hits = Physics2D.RaycastAll(origin, dir, distance).OrderBy(h => h.distance).ToList();
         RaycastHit2D hit = hits[0];
         //ignore lens.
-        if (fromLens && hits.Count > 1 && hits[0].transform.CompareTag("Lens"))
+        if (fromLens && hits.Count > 1 && hits[0].transform.gameObject.GetComponent<Lens>() != null)
         {
             hit = hits[1];
         }
-        Debug.Log(hit.transform.tag);
 
         var hitpoints = new List<Vector2>();
         hitpoints.Add(hit.point);

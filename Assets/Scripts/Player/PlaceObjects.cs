@@ -65,6 +65,10 @@ public class PlaceObjects : MonoBehaviour
                         StartCoroutine(PositionObject(carry.transform));
                     }
 
+                    Vector2 dir = new Vector2(Input.GetAxis("RightJoystickX_" + id), -Input.GetAxis("RightJoystickY_" + id));
+                    if (dir.sqrMagnitude > controllerDeadzone)
+                        carry.transform.localPosition = dir.normalized * ghostDistance;
+
                     //rotate object
                     if (canRotateObject && Mathf.Abs(Input.GetAxis(ROTATION_AXIS)) > 0.1f)
                     {
@@ -127,7 +131,10 @@ public class PlaceObjects : MonoBehaviour
     {
         carry = carryInRange;
         state = State.Carrying;
+        string tag = carry.transform.tag;
         carry.transform.SetParent(transform, true); //parent the object;
+        carry.tag = tag;
+        Debug.Log(tag);
         carryInRange = null;
         flashlight = carry.GetComponent<Flashlight>();
         if (flashlight != null)

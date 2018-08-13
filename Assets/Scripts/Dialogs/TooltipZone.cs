@@ -95,7 +95,7 @@ public class TooltipZone : MonoBehaviour
 	private void OnTriggerExit2D(Collider2D other)
 	{
         hasBeenTriggered = false;
-        if (other.transform.CompareTag("Player") && numOfPlayersInside <= 1)
+        if (other.transform.CompareTag("Player") && numOfPlayersInside >= 1)
 		{
 			if (ForP1 && other.transform.name == "P1") //duplicate code >:(
 			{
