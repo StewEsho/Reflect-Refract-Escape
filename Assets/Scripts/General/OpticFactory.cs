@@ -39,7 +39,7 @@ public class OpticFactory : MonoBehaviour
 
 	IEnumerator CheckIfEnabled()
 	{
-		isEnabled = gameManager.MoreMirrorsAvailible();
+		isEnabled = gameManager.MoreMirrorsAvailible() || Optic.transform.CompareTag("BeamEmitter");
 		yield return new WaitForSeconds(0.1f);
 	}
 		

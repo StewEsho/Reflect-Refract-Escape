@@ -60,21 +60,6 @@ public class GameManager : MonoBehaviour
 
         if (gameWon)
         {
-//            int star_amount = 0;
-//            controller.SetBool("is_win", true);
-//            if (one_star <= mirrorAmount && mirrorAmount < two_star)
-//            {
-//                star_amount = 1;
-//            }
-//            if (two_star <= mirrorAmount && mirrorAmount < three_star)
-//            {
-//                star_amount = 2;
-//            }
-//            if (three_star <= mirrorAmount )
-//            {
-//                star_amount = 3;
-//            }
-//            controller.SetInteger("star", star_amount);
             ui.ShowLevelCompletePanel();
             if (Input.GetButtonDown("A_P1") || Input.GetButtonDown("A_P2"))
             {
