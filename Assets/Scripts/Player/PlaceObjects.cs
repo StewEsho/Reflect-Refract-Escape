@@ -130,7 +130,10 @@ public class PlaceObjects : MonoBehaviour
     {
         carry = carryInRange;
         state = State.Carrying;
+        string tag = carry.transform.tag;
         carry.transform.SetParent(transform, true); //parent the object;
+        carry.tag = tag;
+        Debug.Log(tag);
         carryInRange = null;
         flashlight = carry.GetComponent<Flashlight>();
         if (flashlight != null)
