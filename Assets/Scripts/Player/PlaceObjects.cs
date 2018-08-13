@@ -94,6 +94,7 @@ public class PlaceObjects : MonoBehaviour
                             Destroy(flashlight);
                             flashlight = null;
                         }
+
                         Destroy(carry);
                         carry = null;
                         state = State.Standard;
@@ -113,7 +114,7 @@ public class PlaceObjects : MonoBehaviour
                 if (carryInRange != null)
                 {
                     PickUpObject();
-                } 
+                }
                 else if (preparedToSpawn)
                 {
                     SpawnNewOptic();
@@ -132,6 +133,9 @@ public class PlaceObjects : MonoBehaviour
         if (flashlight != null)
         {
             carry.transform.localPosition = carry.transform.localPosition.normalized * 0.6f;
+            float angle = (Mathf.Atan2(carry.transform.localPosition.y, carry.transform.localPosition.x) - 135) *
+                          Mathf.Rad2Deg;
+            carry.transform.eulerAngles = new Vector3(0, 0, angle);
         }
     }
 
@@ -151,7 +155,7 @@ public class PlaceObjects : MonoBehaviour
         this.preparedFactoryObject = optic;
         this.preparedFactoryPosition = position;
     }
-    
+
     public void UnprepareForSpawning() //called when exiting an optic factory
     {
         this.preparedToSpawn = false;
@@ -161,7 +165,8 @@ public class PlaceObjects : MonoBehaviour
     public void SpawnNewOptic()
     {
         this.preparedToSpawn = false;
-        GameObject spawn = Instantiate(this.preparedFactoryObject, this.preparedFactoryPosition, this.preparedFactoryObject.transform.rotation,
+        GameObject spawn = Instantiate(this.preparedFactoryObject, this.preparedFactoryPosition,
+            this.preparedFactoryObject.transform.rotation,
             transform);
         this.carryInRange = spawn;
         PickUpObject();
@@ -175,7 +180,14 @@ public class PlaceObjects : MonoBehaviour
     IEnumerator RotateObjects(Transform t)
     {
         float zRotation = Mathf.Sign(-Input.GetAxis(ROTATION_AXIS)) * 15;
-        t.transform.Rotate(0, 0, zRotation);
+        t.Rotate(0, 0, zRotation);
+        t.eulerAngles = new Vector3(0, 0, Mathf.Repeat(t.eulerAngles.z, 360));
+        if (flashlight != null)
+        {
+            float angle = (t.eulerAngles.z - 180) * Mathf.Deg2Rad;
+            t.localPosition = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * 0.6f;
+        }
+
         canRotateObject = false;
         yield return new WaitForSeconds(0.2f);
         canRotateObject = true;
@@ -184,8 +196,15 @@ public class PlaceObjects : MonoBehaviour
     IEnumerator PositionObject(Transform t)
     {
         float deltaAngle = Mathf.Sign(-Input.GetAxis(POSITIONING_AXIS)) * 5;
-        t.transform.localPosition = Quaternion.AngleAxis(deltaAngle, Vector3.forward) * t.transform.localPosition;
+        t.localPosition = Quaternion.AngleAxis(deltaAngle, Vector3.forward) * t.localPosition;
+
         canPositionObject = false;
+        if (flashlight != null)
+        {
+            float angle = (Mathf.Atan2(t.localPosition.y, t.localPosition.x) - 135) * Mathf.Rad2Deg;
+            t.eulerAngles = new Vector3(0, 0, angle);
+        }
+
         yield return new WaitForSeconds(0.02f);
         canPositionObject = true;
     }
