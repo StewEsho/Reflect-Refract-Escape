@@ -2694,8 +2694,6 @@ GameObject:
   - component: {fileID: 1204954224}
   - component: {fileID: 1204954223}
   - component: {fileID: 1204954222}
-  - component: {fileID: 1204954227}
-  - component: {fileID: 1204954226}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2770,45 +2768,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1204954226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1204954221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de2211d9777b9c4f904df10af2e51fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1204954227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1204954221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences:
-    - Hey digital dummy! What are you doing on the other side of this glass
-    - Stop calling me that! Hurry up and come up with a plan to get us out of here.
-    - I can't get through this glass, but I think light can.
-    - We have to work together using mirror to shift the light again.
-    - Press X to toggle place mode.
-    images:
-    - {fileID: 21300066, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-    - {fileID: 21300004, guid: 40c21a6f83a5f9246be46136b77ad623, type: 3}
-    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-    - {fileID: 21300000, guid: 85e7c8d542a6352428d9ec87d08eebaf, type: 3}
-  sequence: 0
-  is_over: 0
-  has_triggered: 0
 --- !u!1001 &1329913000
 Prefab:
   m_ObjectHideFlags: 0

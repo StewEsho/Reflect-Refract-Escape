@@ -17,11 +17,13 @@ public class PlaceObjects : MonoBehaviour
     private string MAIN_BUTTON;
     private string DELETE_BUTTON;
     private string ALT_BUTTON;
+    private string ROTATION_BUTTONS_LEFT;
+    private string ROTATION_BUTTONS_RIGHT;
 
     [SerializeField] private string id; //"P1" or "P2"
     [SerializeField] private float rotationSpeed = 50;
     [SerializeField] private float ghostDistance = 1.25f;
-    [SerializeField] private float controllerDeadzone = 0.19f;
+    [SerializeField] private float controllerDeadzone = 0.8f;
 
 
     private List<GameObject> placementStack; //TODO: check to see if placement stack is even needed.
@@ -47,6 +49,8 @@ public class PlaceObjects : MonoBehaviour
         MAIN_BUTTON = "A_" + id;
         DELETE_BUTTON = "B_" + id;
         ALT_BUTTON = "X_" + id;
+        ROTATION_BUTTONS_LEFT = "LB_" + id;
+        ROTATION_BUTTONS_RIGHT = "RB_" + id;
         Debug.Log(MAIN_BUTTON);
         placementStack = new List<GameObject>();
     }
@@ -76,7 +80,8 @@ public class PlaceObjects : MonoBehaviour
                         }
                         else
                         {
-                            carry.transform.localPosition = dir.normalized * ghostDistance;  
+                            carry.transform.localPosition = dir.normalized;
+                            Debug.Log(ghostDistance);
                         }
                          
                     }
@@ -225,7 +230,7 @@ public class PlaceObjects : MonoBehaviour
             t.eulerAngles = new Vector3(0, 0, angle);
         }
 
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(0.1f);
         canPositionObject = true;
     }
 }

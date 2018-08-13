@@ -43,7 +43,6 @@ public class BeamEmitter : MonoBehaviour
             castLightrays.Add(newLight);
         }
 
-        IsActive = !IsDelayed;
         WasActive = IsActive;
     }
 
@@ -54,8 +53,6 @@ public class BeamEmitter : MonoBehaviour
         //if we want the light source to be carryable we have to recalculate the starting position as well as the light direction for every frame.
         beamDirection = -transform.right;
 
-        if (IsActive != WasActive)
-        {
             if (IsActive)
             {
                 foreach (var ray in castLightrays)
@@ -71,8 +68,6 @@ public class BeamEmitter : MonoBehaviour
                 }
             }
 
-            WasActive = IsActive;
-        }
 
         if (IsActive)
         {

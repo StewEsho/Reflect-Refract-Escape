@@ -264,50 +264,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4302005575243662, guid: 8e7f7652a810a3d4d976ff0089b82fdf,
     type: 2}
   m_PrefabInternal: {fileID: 187949798}
---- !u!1 &220466352 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1932013793458518, guid: 3a11ff1319855d045850371446f3d0ed,
-    type: 2}
-  m_PrefabInternal: {fileID: 1171428722}
---- !u!114 &220466353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 220466352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences:
-    - WOW! Magic! Light shifts!
-    - I think this thing can change the direction of light.
-    - I'll call it flat mirror.
-    - From my observation, the angel of incident is equal to the angel of reflection.
-    - OK...Ok...Enough with the science, let's get out of here.
-    images:
-    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-    - {fileID: 21300008, guid: fa3f966b5e2f2b541b6edbb8af849d49, type: 3}
-    - {fileID: 21300008, guid: fa3f966b5e2f2b541b6edbb8af849d49, type: 3}
-    - {fileID: 21300000, guid: 6a5b8176b6c9b6147aad22376d1741a4, type: 3}
-    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-  sequence: 0
-  is_over: 0
-  has_triggered: 0
---- !u!114 &220466354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 220466352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be67d01594daceb4ba533391ec5fccb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &245306217
 Prefab:
   m_ObjectHideFlags: 0
@@ -384,50 +340,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4480886100404564, guid: 3a11ff1319855d045850371446f3d0ed,
     type: 2}
   m_PrefabInternal: {fileID: 245306217}
---- !u!1 &245306219 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1932013793458518, guid: 3a11ff1319855d045850371446f3d0ed,
-    type: 2}
-  m_PrefabInternal: {fileID: 245306217}
---- !u!114 &245306220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 245306219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be67d01594daceb4ba533391ec5fccb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &245306221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 245306219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences:
-    - WOW! Magic! Light shifts!
-    - I think this thing can change the direction of light.
-    - I'll call it flat mirror.
-    - From my observation, the angel of incident is equal to the angel of reflection.
-    - OK...Ok...Enough with the science, let's get out of here.
-    images:
-    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-    - {fileID: 21300008, guid: fa3f966b5e2f2b541b6edbb8af849d49, type: 3}
-    - {fileID: 21300008, guid: fa3f966b5e2f2b541b6edbb8af849d49, type: 3}
-    - {fileID: 21300000, guid: 6a5b8176b6c9b6147aad22376d1741a4, type: 3}
-    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-  sequence: 0
-  is_over: 0
-  has_triggered: 0
 --- !u!1001 &454642855
 Prefab:
   m_ObjectHideFlags: 0
@@ -2413,8 +2325,6 @@ GameObject:
   - component: {fileID: 1793243319}
   - component: {fileID: 1793243318}
   - component: {fileID: 1793243317}
-  - component: {fileID: 1793243322}
-  - component: {fileID: 1793243321}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2489,43 +2399,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1793243321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1793243316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de2211d9777b9c4f904df10af2e51fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1793243322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1793243316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences:
-    - Great, another door.
-    - Well, what now?
-    - You remember this from last level? I took it with me just in case.
-    - Press X to toggle place mode.
-    images:
-    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-    - {fileID: 21300066, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-    - {fileID: 21300008, guid: fa3f966b5e2f2b541b6edbb8af849d49, type: 3}
-    - {fileID: 21300000, guid: 85e7c8d542a6352428d9ec87d08eebaf, type: 3}
-  sequence: 0
-  is_over: 0
-  has_triggered: 0
 --- !u!1 &1841192527
 GameObject:
   m_ObjectHideFlags: 0
