@@ -38,14 +38,26 @@ public class Lens : MonoBehaviour, IOptic
 //        float refraction_y = normal.x * Mathf.Sin(angle) + normal.y * Mathf.Cos(angle);
 //        refractionDir = new Vector2(refraction_x, refraction_y);
 //        return refractionDir;
+        
+        
+//        float crossSign = Mathf.Sign(Vector3.Cross(normal, incidenceDir).z);
+//        angle = (Mathf.PI) -
+//                Mathf.Acos(Vector2.Dot(normal, incidenceDir) / (normal.magnitude * incidenceDir.magnitude));
+//        angle *= crossSign;
+//        float refractionX = normal.x * Mathf.Cos(angle) - normal.y * Mathf.Sin(angle);
+//        float refractionY = normal.x * Mathf.Sin(angle) + normal.y * Mathf.Cos(angle);
+//        refractionDir = -1 * new Vector2(refractionX, refractionY);
+//
+//        return refractionDir;
+        
         float crossSign = Mathf.Sign(Vector3.Cross(normal, incidenceDir).z);
         angle = (Mathf.PI) -
                 Mathf.Acos(Vector2.Dot(normal, incidenceDir) / (normal.magnitude * incidenceDir.magnitude));
         angle *= crossSign;
-        float refractionX = normal.x * Mathf.Cos(angle) - normal.y * Mathf.Sin(angle);
-        float refractionY = normal.x * Mathf.Sin(angle) + normal.y * Mathf.Cos(angle);
-        refractionDir = -1 * new Vector2(refractionX, refractionY);
+        float reflection_x = normal.x * Mathf.Cos(angle) - normal.y * Mathf.Sin(angle);
+        float reflection_y = normal.x * Mathf.Sin(angle) + normal.y * Mathf.Cos(angle);
+        refractionDir = new Vector2(reflection_x, reflection_y);
 
-        return refractionDir;
+        return -refractionDir;
     }
 }
