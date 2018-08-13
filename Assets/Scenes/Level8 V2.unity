@@ -497,6 +497,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114536313689362718, guid: 1acd602c27ee4da42aafe9b3c3e3b934,
+        type: 2}
+      propertyPath: mirrorLimit
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1acd602c27ee4da42aafe9b3c3e3b934, type: 2}
   m_IsPrefabAsset: 0
@@ -524,7 +529,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4776611239378520, guid: a1ee05734c4da0141a43ce2002d81057, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4776611239378520, guid: a1ee05734c4da0141a43ce2002d81057, type: 2}
       propertyPath: m_LocalPosition.y
@@ -532,7 +537,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4776611239378520, guid: a1ee05734c4da0141a43ce2002d81057, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 4776611239378520, guid: a1ee05734c4da0141a43ce2002d81057, type: 2}
       propertyPath: m_LocalRotation.x
@@ -11968,15 +11973,15 @@ Prefab:
         type: 3}
     - target: {fileID: 4501434980383212, guid: a1ee05734c4da0141a43ce2002d81057, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4129270413748984, guid: a1ee05734c4da0141a43ce2002d81057, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4480169431850912, guid: a1ee05734c4da0141a43ce2002d81057, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ee05734c4da0141a43ce2002d81057, type: 2}
@@ -12000,7 +12005,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4974695641827892, guid: ba66659e613ba944d9a41602049f5589, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9.63
+      value: -9.58
       objectReference: {fileID: 0}
     - target: {fileID: 4974695641827892, guid: ba66659e613ba944d9a41602049f5589, type: 2}
       propertyPath: m_LocalPosition.y
@@ -12049,7 +12054,7 @@ GameObject:
   - component: {fileID: 1542509986}
   - component: {fileID: 1542509985}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12086,7 +12091,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

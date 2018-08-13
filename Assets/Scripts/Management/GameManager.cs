@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
 //            }
 //            controller.SetInteger("star", star_amount);
             ui.ShowLevelCompletePanel();
-            if (Input.GetButtonDown("A_P1"))
+            if (Input.GetButtonDown("A_P1") || Input.GetButtonDown("A_P2"))
             {
                 //Load next level
                 SceneManager.LoadScene((int) Mathf.Repeat(SceneManager.GetActiveScene().buildIndex + 1,

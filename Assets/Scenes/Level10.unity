@@ -424,7 +424,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -892,9 +892,29 @@ Prefab:
       propertyPath: ControlledItems.Array.data[0]
       value: 
       objectReference: {fileID: 202214980}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114856028970739292, guid: 3a11ff1319855d045850371446f3d0ed, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 3a11ff1319855d045850371446f3d0ed, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1298718954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1932013793458518, guid: 3a11ff1319855d045850371446f3d0ed,
+    type: 2}
+  m_PrefabInternal: {fileID: 1298718953}
+--- !u!114 &1298718955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298718954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c95ba1a0f3378584cbb952031c03b8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 0
+  ControlledItems:
+  - {fileID: 202214980}
 --- !u!1001 &1308954003
 Prefab:
   m_ObjectHideFlags: 0
@@ -6573,6 +6593,11 @@ Prefab:
     - target: {fileID: 4476844830292528, guid: 1acd602c27ee4da42aafe9b3c3e3b934, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114536313689362718, guid: 1acd602c27ee4da42aafe9b3c3e3b934,
+        type: 2}
+      propertyPath: mirrorLimit
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1acd602c27ee4da42aafe9b3c3e3b934, type: 2}

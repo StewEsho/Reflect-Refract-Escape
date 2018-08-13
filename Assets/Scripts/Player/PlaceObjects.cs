@@ -163,7 +163,7 @@ public class PlaceObjects : MonoBehaviour
     public void SpawnNewOptic()
     {
         this.preparedToSpawn = false;
-        GameObject spawn = Instantiate(this.preparedFactoryObject, this.preparedFactoryPosition, Quaternion.identity,
+        GameObject spawn = Instantiate(this.preparedFactoryObject, this.preparedFactoryPosition, this.preparedFactoryObject.transform.rotation,
             transform);
         this.carryInRange = spawn;
         PickUpObject();
