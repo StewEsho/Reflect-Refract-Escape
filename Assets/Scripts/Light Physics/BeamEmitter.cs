@@ -104,16 +104,9 @@ public class BeamEmitter : MonoBehaviour
         var hits = Physics2D.RaycastAll(origin, dir, distance).OrderBy(h => h.distance).ToList();
         RaycastHit2D hit = hits[0];
         //ignore lens.
-        if (fromLens)
+        if (fromLens && hits.Count > 1 && hits[0].transform.CompareTag("Lens"))
         {
-            for (int i = 0; i < Math.Min(hits.Count, 3); i++)
-            {
-                if (!hits[i].transform.CompareTag("Lens"))
-                {
-                    hit = hits[i];
-                    break;
-                }
-            }
+            hit = hits[1];
         }
         Debug.Log(hit.transform.tag);
 
