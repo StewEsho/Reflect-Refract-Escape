@@ -67,7 +67,19 @@ public class PlaceObjects : MonoBehaviour
 
                     Vector2 dir = new Vector2(Input.GetAxis("RightJoystickX_" + id), -Input.GetAxis("RightJoystickY_" + id));
                     if (dir.sqrMagnitude > controllerDeadzone)
-                        carry.transform.localPosition = dir.normalized * ghostDistance;
+                    {
+                        if (flashlight != null)
+                        {
+                            carry.transform.localPosition = dir.normalized * 0.6f;
+                            float angle = (Mathf.Atan2(carry.transform.localPosition.y, carry.transform.localPosition.x) - 135) * Mathf.Rad2Deg;
+                            carry.transform.eulerAngles = new Vector3(0, 0, angle);
+                        }
+                        else
+                        {
+                            carry.transform.localPosition = dir.normalized * ghostDistance;  
+                        }
+                         
+                    }
 
                     //rotate object
                     if (canRotateObject && Mathf.Abs(Input.GetAxis(ROTATION_AXIS)) > 0.1f)
@@ -134,6 +146,7 @@ public class PlaceObjects : MonoBehaviour
         string tag = carry.transform.tag;
         carry.transform.SetParent(transform, true); //parent the object;
         carry.tag = tag;
+        ghostDistance = carry.transform.localPosition.magnitude;
         Debug.Log(tag);
         carryInRange = null;
         flashlight = carry.GetComponent<Flashlight>();
