@@ -13,7 +13,7 @@ public class Exit : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    private void Update()
+    private void LateUpdate()
     {
         if (players.Count == GameObject.FindGameObjectsWithTag("Player").Length)
         {
@@ -27,6 +27,16 @@ public class Exit : MonoBehaviour {
             if (players.Contains(collision.transform.gameObject) == false)
             {
                 players.Add(collision.transform.gameObject);
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.gameObject.tag == "Player")
+        {
+            if (players.Contains(collision.transform.gameObject) == true)
+            {
+                players.Remove(collision.transform.gameObject);
             }
         }
     }

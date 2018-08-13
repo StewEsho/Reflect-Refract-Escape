@@ -708,8 +708,6 @@ GameObject:
   - component: {fileID: 695397059}
   - component: {fileID: 695397058}
   - component: {fileID: 695397057}
-  - component: {fileID: 695397062}
-  - component: {fileID: 695397061}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -784,43 +782,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &695397061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 695397056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de2211d9777b9c4f904df10af2e51fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &695397062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 695397056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bd1d837bb445940ab2babe1ebc0f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences:
-    - Ah, it's another one of those.
-    - It seems like we have to put the mirror outside the doors. Can you do that?
-    - I'll give it a try!
-    - Press X to toggle place mode.
-    images:
-    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-    - {fileID: 21300066, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-    - {fileID: 21300064, guid: fa9332c75a649464c8bcdb434f5c9951, type: 3}
-    - {fileID: 21300000, guid: 85e7c8d542a6352428d9ec87d08eebaf, type: 3}
-  sequence: 0
-  is_over: 0
-  has_triggered: 0
 --- !u!1001 &1019522380
 Prefab:
   m_ObjectHideFlags: 0
@@ -975,66 +936,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194a78980a179aa4f8cc5a649f0e33ac, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1235747447
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -2.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4358852329449570, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1673364701387316, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
-      propertyPath: m_Name
-      value: levelSelector (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114769964813154280, guid: e262519a9e5812f46bbf2fc84d2ef2ef,
-        type: 2}
-      propertyPath: level_to_load
-      value: Sandbox
-      objectReference: {fileID: 0}
-    - target: {fileID: 1673364701387316, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 102290952059074816, guid: e262519a9e5812f46bbf2fc84d2ef2ef,
-        type: 2}
-      propertyPath: m_Text
-      value: Sandbox
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e262519a9e5812f46bbf2fc84d2ef2ef, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1243262036
 Prefab:

@@ -4256,6 +4256,11 @@ Prefab:
       propertyPath: numOfBeams
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114982867033827596, guid: 4e3a8252cd76d204d822e9aa7f9ea0bd,
+        type: 2}
+      propertyPath: NumberOfBeams
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e3a8252cd76d204d822e9aa7f9ea0bd, type: 2}
   m_IsPrefabAsset: 0

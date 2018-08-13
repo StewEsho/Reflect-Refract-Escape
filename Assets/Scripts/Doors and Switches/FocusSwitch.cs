@@ -5,6 +5,7 @@ using UnityEngine;
 public class FocusSwitch : MonoBehaviour
 {
     private List<GameObject> beams = new List<GameObject>();
+    private TextMesh displayText;
     public int threshold;
     protected Light lightsource;
     [SerializeField]
@@ -12,6 +13,7 @@ public class FocusSwitch : MonoBehaviour
     private void Start()
     {
         lightsource = transform.GetChild(0).GetComponent<Light>();
+        displayText = transform.GetChild(1).GetComponent<TextMesh>();
     }
     private void LateUpdate()
     {
@@ -25,6 +27,7 @@ public class FocusSwitch : MonoBehaviour
             var door = item.GetComponent<Door>();
             if (door != null) door.SetDoorState(isActive);
         }
+        displayText.text = (threshold - NumOfHits).ToString();
         beams.Clear();
     }
     public void Activate(GameObject beam)
