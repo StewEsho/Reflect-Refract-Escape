@@ -98,8 +98,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CountMirrors()
     {
-        GameObject[] mirrors = GameObject.FindGameObjectsWithTag("mirror"); 
-        mirrorAmount = mirrors.Length;
+        GameObject[] mirrors = GameObject.FindGameObjectsWithTag("mirror");
+        GameObject[] lenses = GameObject.FindGameObjectsWithTag("Lens");
+        mirrorAmount = mirrors.Length + lenses.Length;
         ui.SetOpticCount(mirrorLimit - mirrorAmount);
         yield return new WaitForSeconds(.1f);
     }

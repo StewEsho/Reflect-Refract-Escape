@@ -15,6 +15,7 @@ TagManager:
   - BeamEmitter
   - Ghost
   - portal
+  - Lens
   layers:
   - Default
   - TransparentFX

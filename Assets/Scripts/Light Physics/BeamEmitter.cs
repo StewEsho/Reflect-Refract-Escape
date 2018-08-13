@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -53,13 +54,14 @@ public class BeamEmitter : MonoBehaviour
         beamDirection = -transform.right;
         for (var i = 0; i < NumberOfBeams; i++)
         {
-            var spacing = (float)(i - NumberOfBeams / 2) / 10;
+            var spacing = (float) (i - NumberOfBeams / 2) / 10;
             var xSpace = spacing * Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad);
             var ySpace = spacing * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
             beamOrigins[i] = transform.position.V2().addX(xSpace).addY(ySpace);
             castLightrays[i].GetComponent<LineRenderer>().SetPosition(0, beamOrigins[i]);
             castLightrays[i].transform.position = beamOrigins[i];
-        }
+        } //todo: optimize
+
         if (IsActive != WasActive)
         {
             if (IsActive)
@@ -93,10 +95,28 @@ public class BeamEmitter : MonoBehaviour
             }
         }
     }
+    
+    
 
-    protected List<Vector2> CalculateLightPoints(Vector2 origin, Vector2 dir, GameObject ray)
+    protected List<Vector2> CalculateLightPoints(Vector2 origin, Vector2 dir, GameObject ray, bool fromLens = false)
     {
-        var hit = Physics2D.Raycast(origin, dir, 30);
+        float distance = 30;
+        var hits = Physics2D.RaycastAll(origin, dir, distance).OrderBy(h => h.distance).ToList();
+        RaycastHit2D hit = hits[0];
+        //ignore lens.
+        if (fromLens)
+        {
+            for (int i = 0; i < Math.Min(hits.Count, 3); i++)
+            {
+                if (!hits[i].transform.CompareTag("Lens"))
+                {
+                    hit = hits[i];
+                    break;
+                }
+            }
+        }
+        Debug.Log(hit.transform.tag);
+
         var hitpoints = new List<Vector2>();
         hitpoints.Add(hit.point);
 
@@ -117,18 +137,8 @@ public class BeamEmitter : MonoBehaviour
             {
                 if (optic is Lens)
                 {
-                    var newDir = optic.Refract(hit.point, dir, hit.normal);
-                    var newHit = Physics2D.Raycast(hitpoint - 0.01f * hit.normal,
-                        newDir, 1);
-                    if (newHit.collider == null)
-                    {
-                        hitpoints.AddRange(CalculateLightPoints(newHit.point - 0.01f * hit.normal, newDir, ray));
-                    }
-                    else
-                    {
-                        hitpoints.AddRange(CalculateLightPoints(hit.point - 0.01f * hit.normal,
-                            optic.Refract(hit.point, dir, hit.normal), ray));
-                    }
+                    hitpoints.AddRange(CalculateLightPoints(hit.point - 0.01f * hit.normal,
+                        optic.Refract(hit.point, dir, hit.normal), ray, true));
                 }
                 else if (optic is Mirror)
                 {

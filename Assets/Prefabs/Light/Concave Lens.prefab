@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114078200229515578}
   m_Layer: 9
   m_Name: Concave Lens
-  m_TagString: mirror
+  m_TagString: Lens
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

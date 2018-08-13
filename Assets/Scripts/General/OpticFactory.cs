@@ -40,7 +40,6 @@ public class OpticFactory : MonoBehaviour
 	IEnumerator CheckIfEnabled()
 	{
 		isEnabled = gameManager.MoreMirrorsAvailible();
-		Debug.Log(isEnabled);
 		yield return new WaitForSeconds(0.1f);
 	}
 		

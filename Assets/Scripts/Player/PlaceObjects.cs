@@ -119,8 +119,6 @@ public class PlaceObjects : MonoBehaviour
                     SpawnNewOptic();
                 }
             }
-            
-            Debug.Log(preparedToSpawn);
         }
     }
 
